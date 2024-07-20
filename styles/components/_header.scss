@@ -1,0 +1,50 @@
+body {
+  background-color: $bd-bg;
+  height: 100vh;
+  header {
+    width: 100%;
+    padding: 24px 15px;
+    background-color: white;
+    .header-container {
+      @include container(flex, space-between, center);
+      svg {
+        fill: $gray-color;
+      }
+      .header-right {
+        @include container(flex, auto, center);
+        gap: 15px;
+        padding-right: 8px;
+        .arrow-box {
+          @include container(flex, auto, center);
+          gap: 6px;
+          font-family: "bold";
+          font-size: 12px;
+          color: $blue-color;
+          svg {
+            fill: $blue-color;
+          }
+        }
+        .burger-menu {
+          @include container(flex, auto, flex-start);
+          flex-direction: column;
+          gap: 5px;
+          cursor: pointer;
+          div {
+            height: 2px;
+            background-color: $gray-color;
+            border-radius: 1px;
+          }
+          .first {
+            width: 11px;
+          }
+          .second {
+            width: 20px;
+          }
+          .third {
+            width: 15px;
+          }
+        }
+      }
+    }
+  }
+}

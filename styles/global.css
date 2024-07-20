@@ -158,4 +158,63 @@ table {
 
 button {
   cursor: pointer;
+}
+
+body {
+  background-color: #f9fafa;
+  height: 100vh;
+}
+body header {
+  width: 100%;
+  padding: 24px 15px;
+  background-color: white;
+}
+body header .header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+body header .header-container svg {
+  fill: #555f62;
+}
+body header .header-container .header-right {
+  display: flex;
+  justify-content: auto;
+  align-items: center;
+  gap: 15px;
+  padding-right: 8px;
+}
+body header .header-container .header-right .arrow-box {
+  display: flex;
+  justify-content: auto;
+  align-items: center;
+  gap: 6px;
+  font-family: "bold";
+  font-size: 12px;
+  color: #182cc0;
+}
+body header .header-container .header-right .arrow-box svg {
+  fill: #182cc0;
+}
+body header .header-container .header-right .burger-menu {
+  display: flex;
+  justify-content: auto;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+body header .header-container .header-right .burger-menu div {
+  height: 2px;
+  background-color: #555f62;
+  border-radius: 1px;
+}
+body header .header-container .header-right .burger-menu .first {
+  width: 11px;
+}
+body header .header-container .header-right .burger-menu .second {
+  width: 20px;
+}
+body header .header-container .header-right .burger-menu .third {
+  width: 15px;
 }/*# sourceMappingURL=global.css.map */
