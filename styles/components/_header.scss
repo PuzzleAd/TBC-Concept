@@ -3,7 +3,6 @@ body {
   height: 100vh;
   header {
     position: fixed;
-    z-index: 149;
     width: 100%;
     height: 80px;
     padding: 0 15px;
@@ -17,8 +16,8 @@ body {
       display: grid;
     }
     .header-container {
-      width: 100%;
-      height: 100%;
+      width: inherit;
+      height: inherit;
       @include container(flex, space-between, center);
       @include responsive(large) {
         justify-self: center;
@@ -36,22 +35,22 @@ body {
         }
         .laptop-svg {
           display: block;
+          width: 190px;
           cursor: pointer;
         }
       }
       nav {
         display: none;
         div {
-          height: 100%;
+          cursor: pointer;
+          height: inherit;
           display: flex;
           align-items: center;
-          a {
-            font-family: "regular";
-            font-size: 14px;
-            color: $nav-color;
-            @include responsive(largest) {
-              font-size: 16px;
-            }
+          font-family: "regular";
+          font-size: 14px;
+          color: $nav-color;
+          @include responsive(largest) {
+            font-size: 16px;
           }
         }
         @include responsive(large) {
@@ -183,6 +182,7 @@ body {
         }
         #eng-box {
           position: absolute;
+          z-index: 102;
           top: 50px;
           cursor: pointer;
           justify-content: center;
@@ -207,6 +207,88 @@ body {
         }
         .eng-box-none {
           display: none;
+        }
+      }
+    }
+    #drop-down-container {
+      display: grid;
+      padding: 32px 45px;
+      background-color: #ffffff;
+      position: absolute;
+      top: 80px;
+      left: 0;
+      right: 0;
+      .drop-down-box {
+        width: 100%;
+        max-width: 1100px;
+        display: flex;
+        justify-content: space-between;
+        margin: 0 auto;
+        .image-box {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          a {
+            display: flex;
+            gap: 6px;
+            p {
+              margin-top: 2px;
+              font-family: "bold";
+              font-size: 14px;
+              color: $blue-color;
+            }
+            svg {
+              fill: $blue-color;
+            }
+            &:hover {
+              p {
+                color: $hover-color;
+                transition: 0.5s;
+              }
+              svg {
+                fill: $hover-color;
+                transition: 0.5s;
+              }
+            }
+          }
+        }
+        .list-box {
+          width: 450px;
+          display: flex;
+          gap: 45px;
+          ul {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            li {
+              cursor: pointer;
+              width: 96.25px;
+              font-family: "regular";
+              font-size: 16px;
+              color: $nav-color;
+              @include responsive(largest) {
+                font-family: "medium";
+                font-size: 14px;
+              }
+              &:hover {
+                color: $blue-color;
+                transition: 0.5s;
+              }
+            }
+          }
+          .first-list {
+            padding-left: 15px;
+          }
+          @include responsive(largest) {
+            .first-list {
+                padding-left: 0;
+            }
+          }
+        }
+        .blank-box {
+          width: 327px;
+          height: inherit;
+          background-color: transparent;
         }
       }
     }
