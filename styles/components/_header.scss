@@ -3,7 +3,8 @@ body {
   height: 100vh;
   header {
     width: 100%;
-    padding: 24px 15px;
+    height: 80px;
+    padding: 0 15px;
     background-color: white;
     border-bottom: 1px solid #eef1f1;
     @include responsive(small) {
@@ -15,6 +16,7 @@ body {
     }
     .header-container {
       width: 100%;
+      height: 100%;
       @include container(flex, space-between, center);
       @include responsive(large) {
         justify-self: center;
@@ -37,15 +39,25 @@ body {
       }
       nav {
         display: none;
-        a {
-          font-family: "regular";
-          font-size: 14px;
-          color: $nav-color;
+        div {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            a {
+                font-family: "regular";
+                font-size: 14px;
+                color: $nav-color;
+                @include responsive(largest) {
+                    font-size: 16px;
+                }
+              }
         }
         @include responsive(large) {
           display: flex;
+          height: 100%;
           gap: 32px;
         }
+        
       }
       .header-right {
         @include container(flex, auto, center);
@@ -129,6 +141,9 @@ body {
             background-color: gainsboro;
             transition: background-color 0.25s ease-in-out;
           }
+        }
+        @include responsive(largest) {
+            font-size: 16px;
         }
       }
     }

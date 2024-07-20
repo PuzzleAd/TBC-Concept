@@ -166,7 +166,8 @@ body {
 }
 body header {
   width: 100%;
-  padding: 24px 15px;
+  height: 80px;
+  padding: 0 15px;
   background-color: white;
   border-bottom: 1px solid #eef1f1;
 }
@@ -183,6 +184,7 @@ body header {
 }
 body header .header-container {
   width: 100%;
+  height: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -211,14 +213,25 @@ body header .header-container .laptop-svg {
 body header .header-container nav {
   display: none;
 }
-body header .header-container nav a {
+body header .header-container nav div {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+body header .header-container nav div a {
   font-family: "regular";
   font-size: 14px;
   color: #222;
 }
+@media (min-width: 1440px) {
+  body header .header-container nav div a {
+    font-size: 16px;
+  }
+}
 @media (min-width: 1024px) {
   body header .header-container nav {
     display: flex;
+    height: 100%;
     gap: 32px;
   }
 }
@@ -319,5 +332,10 @@ body header .header-container .language-box {
   body header .header-container .language-box:hover {
     background-color: gainsboro;
     transition: background-color 0.25s ease-in-out;
+  }
+}
+@media (min-width: 1440px) {
+  body header .header-container .language-box {
+    font-size: 16px;
   }
 }/*# sourceMappingURL=global.css.map */

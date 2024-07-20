@@ -7,6 +7,7 @@
 $media-small: 479px;
 $media-medium: 767px;
 $media-large: 1024px;
+$media-largest: 1440px;
 
 @mixin responsive($media) {
   @if $media == small {
@@ -19,6 +20,10 @@ $media-large: 1024px;
     }
   } @else if $media == large {
     @media (min-width: $media-large) {
+      @content;
+    }
+  } @else if $media == largest {
+    @media (min-width: $media-largest) {
       @content;
     }
   }
