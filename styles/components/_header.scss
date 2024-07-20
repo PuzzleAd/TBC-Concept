@@ -5,43 +5,129 @@ body {
     width: 100%;
     padding: 24px 15px;
     background-color: white;
+    border-bottom: 1px solid #eef1f1;
+    @include responsive(small) {
+      padding-left: 45px;
+      padding-right: 45px;
+    }
+    @include responsive(large) {
+      display: grid;
+    }
     .header-container {
+      width: 100%;
       @include container(flex, space-between, center);
+      @include responsive(large) {
+        justify-self: center;
+        max-width: 1110px;
+      }
       svg {
         fill: $gray-color;
+      }
+      .laptop-svg {
+        display: none;
+      }
+      @include responsive(medium) {
+        .mobile-svg {
+          display: none;
+        }
+        .laptop-svg {
+          display: block;
+          cursor: pointer;
+        }
+      }
+      nav {
+        display: none;
+        a {
+          font-family: "regular";
+          font-size: 14px;
+          color: $nav-color;
+        }
+        @include responsive(large) {
+          display: flex;
+          gap: 32px;
+        }
       }
       .header-right {
         @include container(flex, auto, center);
         gap: 15px;
         padding-right: 8px;
-        .arrow-box {
-          @include container(flex, auto, center);
-          gap: 6px;
-          font-family: "bold";
-          font-size: 12px;
-          color: $blue-color;
-          svg {
-            fill: $blue-color;
+        @include responsive(small) {
+          gap: 25px;
+        }
+        @include responsive(large) {
+          gap: 25px;
+        }
+        .loop-svg {
+          cursor: pointer;
+          &:hover {
+            fill: $hover-color;
+            transition: 1s;
           }
         }
-        .burger-menu {
-          @include container(flex, auto, flex-start);
-          flex-direction: column;
-          gap: 5px;
+      }
+
+      .arrow-box {
+        @include container(flex, auto, center);
+        gap: 6px;
+        font-family: "bold";
+        font-size: 12px;
+        color: $blue-color;
+        cursor: pointer;
+        &:hover {
+          color: $hover-color;
+          transition: 1s;
+          svg {
+            fill: $hover-color;
+            transition: 1s;
+          }
+        }
+        p {
+          margin-top: 2px;
+        }
+        @include responsive(small) {
+          font-size: 14px;
+        }
+        svg {
+          fill: $blue-color;
+        }
+      }
+      .burger-menu {
+        @include container(flex, auto, flex-start);
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+        @include responsive(large) {
+          display: none;
+        }
+        div {
+          height: 2px;
+          background-color: $gray-color;
+          border-radius: 1px;
+        }
+        .first {
+          width: 11px;
+        }
+        .second {
+          width: 20px;
+        }
+        .third {
+          width: 15px;
+        }
+      }
+      .language-box {
+        display: none;
+        @include responsive(large) {
           cursor: pointer;
-          div {
-            height: 2px;
-            background-color: $gray-color;
-            border-radius: 1px;
-          }
-          .first {
-            width: 11px;
-          }
-          .second {
-            width: 20px;
-          }
-          .third {
-            width: 15px;
+          display: flex;
+          gap: 4px;
+          font-family: "bold";
+          font-size: 14px;
+          color: $gray-color;
+          padding: 8px;
+          border-radius: 4px;
+          &:hover {
+            background-color: gainsboro;
+            transition: background-color 0.25s ease-in-out;
           }
         }
       }

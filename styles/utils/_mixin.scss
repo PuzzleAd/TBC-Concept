@@ -1,5 +1,25 @@
 @mixin container($display, $justify, $align) {
-    display: $display;
-    justify-content: $justify;
-    align-items: $align;
+  display: $display;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+$media-small: 479px;
+$media-medium: 767px;
+$media-large: 1024px;
+
+@mixin responsive($media) {
+  @if $media == small {
+    @media (min-width: $media-small) {
+      @content;
+    }
+  } @else if $media == medium {
+    @media (min-width: $media-medium) {
+      @content;
+    }
+  } @else if $media == large {
+    @media (min-width: $media-large) {
+      @content;
+    }
   }
+}
