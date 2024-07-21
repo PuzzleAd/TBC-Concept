@@ -165,8 +165,8 @@ body {
       }
       .language-box {
         height: 70%;
-        display: flex;
-        align-items: center;
+
+        @include container(flex, auto, center);
         position: relative;
         display: none;
         @include responsive(large) {
@@ -235,8 +235,8 @@ body {
       .drop-down-box {
         width: 100%;
         max-width: 1100px;
-        display: flex;
-        justify-content: space-between;
+
+        @include container(flex, space-between, auto);
         margin: 0 auto;
         .image-box {
           display: flex;
@@ -278,8 +278,6 @@ body {
               gap: 24px;
               li {
                 cursor: pointer;
-
-                font-family: "regular";
                 font-size: 16px;
                 color: $nav-color;
                 @include responsive(largest) {
@@ -314,6 +312,7 @@ body {
     }
     #menu-container {
       display: none;
+      overflow-y: scroll;
       position: fixed;
       z-index: 100;
       top: 80px;
@@ -326,9 +325,7 @@ body {
         .nav-item {
           padding: 32px 15px;
           border-bottom: 1px solid #d1d5d6;
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
+          @include container(flex, space-between, center);
           h3 {
             font-family: "bold";
             font-size: 18px;
@@ -397,9 +394,7 @@ body {
             a {
               width: 52px;
               height: 52px;
-              display: flex;
-              justify-content: center;
-              align-items: center;
+              @include container(flex, center, center);
               background-color: $bd-bg;
               border-radius: 6px;
               @include responsive(medium) {
@@ -439,8 +434,7 @@ body {
           align-items: center;
         }
         .left-side {
-          display: flex;
-          align-items: center;
+          @include container(flex, auto, center);
           gap: 8px;
           svg {
             width: 21px;

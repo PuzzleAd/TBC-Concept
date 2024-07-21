@@ -30,8 +30,8 @@ const burgerMenuActivation = () => {
     ? (mainFooter.style.display = "none")
     : (mainFooter.style.display = "block");
 
-    const header = document.querySelector("header")
-    burgerMenuIcon.classList.contains("burger-menu-active")
+  const header = document.querySelector("header");
+  burgerMenuIcon.classList.contains("burger-menu-active")
     ? (header.style.backgroundColor = "#f9fafa")
     : (header.style.backgroundColor = "white");
 };
