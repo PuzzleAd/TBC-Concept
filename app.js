@@ -92,3 +92,22 @@ navArray.forEach((element, index, array) => {
     listDropper(index);
   });
 });
+
+// burger menu nav-accordion
+
+const accordionActive = (arr, activeElement, className) => {
+  arr.forEach((element) => {
+    if (element !== activeElement) {
+      element.classList.remove(className);
+    }
+  });
+};
+
+const accArray = Array.from(document.querySelectorAll("#top"));
+
+accArray.forEach((element, index, array) => {
+  element.addEventListener("click", () => {
+    element.classList.toggle("active");
+    accordionActive(array, element, "active");
+  });
+});

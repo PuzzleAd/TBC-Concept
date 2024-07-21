@@ -4,6 +4,15 @@
   align-items: $align;
 }
 
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 $media-small: 479px;
 $media-medium: 767px;
 $media-large: 1024px;

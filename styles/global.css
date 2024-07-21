@@ -160,10 +160,19 @@ button {
   cursor: pointer;
 }
 
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 body {
   background-color: #f9fafa;
   height: 100vh;
   font-family: "regular";
+  line-height: 1.7;
 }
 body header {
   position: fixed;
@@ -423,6 +432,7 @@ body header #drop-down-container {
   top: 80px;
   left: 0;
   right: 0;
+  animation: fade 0.5s ease-in-out;
 }
 body header #drop-down-container .drop-down-box {
   width: 100%;
@@ -470,6 +480,7 @@ body header #drop-down-container .drop-down-box .list-box div ul {
   display: none;
   flex-direction: column;
   gap: 24px;
+  animation: fade 1s ease-in-out;
 }
 body header #drop-down-container .drop-down-box .list-box div ul li {
   cursor: pointer;
@@ -512,26 +523,54 @@ body header #menu-container {
   right: 0;
   bottom: 0;
   background-color: white;
+  animation: fade 0.5s ease-in-out;
 }
 body header #menu-container .menu-nav-box {
   width: 100%;
 }
 body header #menu-container .menu-nav-box .nav-item {
-  padding: 32px 15px;
+  padding: 0 15px 16px 15px;
   border-bottom: 1px solid #d1d5d6;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-body header #menu-container .menu-nav-box .nav-item h3 {
-  font-family: "bold";
-  font-size: 18px;
-  color: #141719;
 }
 @media (min-width: 479px) {
   body header #menu-container .menu-nav-box .nav-item {
     padding: 32px 45px;
   }
+}
+body header #menu-container .menu-nav-box .nav-item #top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+body header #menu-container .menu-nav-box .nav-item #top h3 {
+  padding-top: 32px;
+  font-family: "bold";
+  font-size: 18px;
+  color: #141719;
+}
+body header #menu-container .menu-nav-box .nav-item #top svg {
+  position: relative;
+  bottom: 10px;
+  transition: transform 0.5s ease-in;
+}
+body header #menu-container .menu-nav-box .nav-item #top.active + .bottom {
+  max-height: 170px;
+}
+body header #menu-container .menu-nav-box .nav-item #top.active svg {
+  transform: rotate(180deg);
+}
+body header #menu-container .menu-nav-box .nav-item .bottom {
+  max-height: 0;
+  overflow: hidden;
+  display: flex;
+  padding-top: 20px;
+  flex-direction: column;
+  gap: 16px;
+  transition: max-height 1.5s ease;
+}
+body header #menu-container .menu-nav-box .nav-item .bottom p {
+  font-size: 16px;
+  color: #555f62;
 }
 body header #menu-container .contact-container {
   width: 100%;
