@@ -15,11 +15,33 @@ languageBox.addEventListener("mouseleave", () => {
 
 // burger menu transition
 
-const burgerMenu = document.getElementById("burger-menu");
+const burgerMenuIcon = document.getElementById("burger-menu");
 
-burgerMenu.addEventListener("click", () => {
-  burgerMenu.classList.toggle("burger-menu-active");
+const burgerMenuActivation = () => {
+  const burgerMenu = document.getElementById("menu-container");
+
+  burgerMenuIcon.classList.contains("burger-menu-active")
+    ? (burgerMenu.style.display = "block")
+    : (burgerMenu.style.display = "none");
+
+  const mainFooter = document.getElementById("main-footer-container");
+
+  burgerMenuIcon.classList.contains("burger-menu-active")
+    ? (mainFooter.style.display = "none")
+    : (mainFooter.style.display = "block");
+
+    const header = document.querySelector("header")
+    burgerMenuIcon.classList.contains("burger-menu-active")
+    ? (header.style.backgroundColor = "#f9fafa")
+    : (header.style.backgroundColor = "white");
+};
+
+burgerMenuIcon.addEventListener("click", () => {
+  burgerMenuIcon.classList.toggle("burger-menu-active");
+  burgerMenuActivation();
 });
+
+// burger menu appear/disappear
 
 // dropDownBox dynamic side
 

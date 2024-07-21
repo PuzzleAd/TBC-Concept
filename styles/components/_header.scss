@@ -1,8 +1,10 @@
 body {
   background-color: $bd-bg;
   height: 100vh;
+  font-family: "regular";
   header {
     position: fixed;
+    top: 0;
     width: 100%;
     height: 80px;
     padding: 0 15px;
@@ -307,6 +309,169 @@ body {
           width: 327px;
           height: inherit;
           background-color: transparent;
+        }
+      }
+    }
+    #menu-container {
+      display: none;
+      position: fixed;
+      z-index: 100;
+      top: 80px;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: white;
+      .menu-nav-box {
+        width: 100%;
+        .nav-item {
+          padding: 32px 15px;
+          border-bottom: 1px solid #d1d5d6;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          h3 {
+            font-family: "bold";
+            font-size: 18px;
+            color: $swiper-h-color;
+          }
+          @include responsive(small) {
+            padding: 32px 45px;
+          }
+        }
+      }
+      .contact-container {
+        width: 100%;
+        padding: 32px 15px;
+        border-bottom: 1px solid #eef1f1;
+        @include responsive(small) {
+          padding: 32px 45px;
+        }
+        .contact-us {
+          font-family: "bold";
+          font-size: 16px;
+          color: $swiper-h-color;
+          margin-bottom: 16px;
+          @include responsive(small) {
+            font-size: 24px;
+            margin-bottom: 24px;
+          }
+          @include responsive(medium) {
+            font-size: 14px;
+            margin-bottom: 16px;
+          }
+        }
+        .contact-box {
+          display: flex;
+          flex-direction: column;
+          gap: 32px;
+          margin: 32px 0 48px 0;
+          @include responsive(small) {
+            margin: 32px 0;
+          }
+          @include responsive(medium) {
+            gap: 16px;
+          }
+          .contact-info {
+            display: flex;
+            gap: 10px;
+            font-family: "medium";
+            font-size: 14px;
+            color: $gray-color;
+          }
+        }
+        .social-container {
+          h3 {
+            font-family: "bold";
+            font-size: 16px;
+            margin-bottom: 24px;
+            @include responsive(small) {
+              font-size: 24px;
+            }
+            @include responsive(medium) {
+              font-size: 14px;
+            }
+          }
+          .social-icons-box {
+            display: flex;
+            gap: 15px;
+            a {
+              width: 52px;
+              height: 52px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              background-color: $bd-bg;
+              border-radius: 6px;
+              @include responsive(medium) {
+                width: 40px;
+                height: 40px;
+              }
+              svg {
+                fill: $gray-color;
+              }
+              &:hover {
+                background-color: #e1e4e5;
+                transition: 0.5s;
+                svg {
+                  fill: $blue-color;
+                  transition: 0.5s;
+                }
+              }
+            }
+          }
+        }
+      }
+      .last-box {
+        width: 100%;
+        padding: 24px 15px;
+        display: flex;
+        flex-direction: column-reverse;
+        gap: 24px;
+        background-color: $bd-bg;
+        @include responsive(small) {
+          padding: 32px 45px;
+          gap: 32px;
+        }
+        @include responsive(medium) {
+          gap: 0;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+        }
+        .left-side {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          svg {
+            width: 21px;
+            fill: $swiper-p-color;
+          }
+          p {
+            font-size: 12px;
+            color: $swiper-p-color;
+            @include responsive(small) {
+              font-size: 14px;
+            }
+            @include responsive(medium) {
+              color: $gray-color;
+              font-size: 12px;
+            }
+          }
+        }
+
+        .right-side {
+          display: flex;
+          gap: 30px;
+          a {
+            color: $gray-color;
+            font-size: 12px;
+            @include responsive(small) {
+              font-size: 14px;
+            }
+            @include responsive(medium) {
+              font-size: 12px;
+            }
+          }
         }
       }
     }
