@@ -41,7 +41,13 @@ body {
       }
       nav {
         display: none;
-        div {
+        @include responsive(large) {
+          display: flex;
+          height: 100%;
+          gap: 32px;
+        }
+        #nav-box {
+          position: relative;
           cursor: pointer;
           height: inherit;
           display: flex;
@@ -49,14 +55,25 @@ body {
           font-family: "regular";
           font-size: 14px;
           color: $nav-color;
+          overflow: hidden;
           @include responsive(largest) {
             font-size: 16px;
           }
-        }
-        @include responsive(large) {
-          display: flex;
-          height: 100%;
-          gap: 32px;
+          #nav-box-line {
+            position: absolute;
+            top: auto;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background-color: $blue-color;
+            border-radius: 1px;
+            transition: width 1s ease, left 1s ease;
+          }
+          &.nav-active #nav-box-line {
+            width: 100%;
+            left: 0;
+          }
         }
       }
       .header-right {
@@ -117,41 +134,31 @@ body {
           height: 2px;
           background-color: $gray-color;
           border-radius: 1px;
+          transition: all 0.5s ease;
         }
         .first {
-          transition: transform 1s ease;
           width: 11px;
         }
-        .first-line-active {
-          position: relative;
-          top: 5px;
-          height: 3px;
-          width: 20px;
-          transition: 0.6s;
-          transform: translateZ(0) scaleX(1) rotateX(0deg) rotateY(0deg)
-            rotate(45deg) skew(0deg, 0deg);
-          transform-style: preserve-3d;
-        }
         .second {
-          transition: transform 1s ease;
           width: 20px;
         }
-        .second-line-active {
-          display: none;
-        }
+
         .third {
-          transition: transform 1s ease;
           width: 15px;
         }
-        .third-line-active {
-          position: relative;
-          bottom: 3px;
-          height: 3px;
+
+        &.burger-menu-active .first {
           width: 20px;
-          transition: 0.6s;
-          transform: translateZ(0) scaleX(1) rotateX(0deg) rotateY(0deg)
-            rotate(-45deg) skew(0deg, 0deg);
-          transform-style: preserve-3d;
+          transform: rotate(-45deg) translateY(10px) translateX(-2px);
+        }
+
+        &.burger-menu-active .second {
+          opacity: 0;
+        }
+
+        &.burger-menu-active .third {
+          width: 20px;
+          transform: rotate(45deg) translateY(-8px);
         }
       }
       .language-box {
@@ -210,8 +217,13 @@ body {
         }
       }
     }
+    .drop-none {
+      display: none;
+    }
+    .drop-active {
+      display: block;
+    }
     #drop-down-container {
-      display: grid;
       padding: 32px 45px;
       background-color: #ffffff;
       position: absolute;
@@ -256,32 +268,38 @@ body {
           width: 450px;
           display: flex;
           gap: 45px;
-          ul {
-            display: flex;
-            flex-direction: column;
-            gap: 24px;
-            li {
-              cursor: pointer;
-              width: 96.25px;
-              font-family: "regular";
-              font-size: 16px;
-              color: $nav-color;
-              @include responsive(largest) {
-                font-family: "medium";
-                font-size: 14px;
-              }
-              &:hover {
-                color: $blue-color;
-                transition: 0.5s;
+          div {
+            width: 96.25px;
+            ul {
+              display: none;
+              flex-direction: column;
+              gap: 24px;
+              li {
+                cursor: pointer;
+
+                font-family: "regular";
+                font-size: 16px;
+                color: $nav-color;
+                @include responsive(largest) {
+                  font-family: "medium";
+                  font-size: 14px;
+                }
+                &:hover {
+                  color: $blue-color;
+                  transition: 0.5s;
+                }
               }
             }
-          }
-          .first-list {
-            padding-left: 15px;
-          }
-          @include responsive(largest) {
+            .list-active {
+              display: flex;
+            }
             .first-list {
+              padding-left: 15px;
+            }
+            @include responsive(largest) {
+              .first-list {
                 padding-left: 0;
+              }
             }
           }
         }

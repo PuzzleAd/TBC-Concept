@@ -215,7 +215,15 @@ body header .header-container .laptop-svg {
 body header .header-container nav {
   display: none;
 }
-body header .header-container nav div {
+@media (min-width: 1024px) {
+  body header .header-container nav {
+    display: flex;
+    height: 100%;
+    gap: 32px;
+  }
+}
+body header .header-container nav #nav-box {
+  position: relative;
   cursor: pointer;
   height: inherit;
   display: flex;
@@ -223,18 +231,27 @@ body header .header-container nav div {
   font-family: "regular";
   font-size: 14px;
   color: #222;
+  overflow: hidden;
 }
 @media (min-width: 1440px) {
-  body header .header-container nav div {
+  body header .header-container nav #nav-box {
     font-size: 16px;
   }
 }
-@media (min-width: 1024px) {
-  body header .header-container nav {
-    display: flex;
-    height: 100%;
-    gap: 32px;
-  }
+body header .header-container nav #nav-box #nav-box-line {
+  position: absolute;
+  top: auto;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: #182cc0;
+  border-radius: 1px;
+  transition: width 1s ease, left 1s ease;
+}
+body header .header-container nav #nav-box.nav-active #nav-box-line {
+  width: 100%;
+  left: 0;
 }
 body header .header-container .header-right {
   height: 100%;
@@ -307,39 +324,27 @@ body header .header-container #burger-menu div {
   height: 2px;
   background-color: #555f62;
   border-radius: 1px;
+  transition: all 0.5s ease;
 }
 body header .header-container #burger-menu .first {
-  transition: transform 1s ease;
   width: 11px;
 }
-body header .header-container #burger-menu .first-line-active {
-  position: relative;
-  top: 5px;
-  height: 3px;
-  width: 20px;
-  transition: 0.6s;
-  transform: translateZ(0) scaleX(1) rotateX(0deg) rotateY(0deg) rotate(45deg) skew(0deg, 0deg);
-  transform-style: preserve-3d;
-}
 body header .header-container #burger-menu .second {
-  transition: transform 1s ease;
   width: 20px;
-}
-body header .header-container #burger-menu .second-line-active {
-  display: none;
 }
 body header .header-container #burger-menu .third {
-  transition: transform 1s ease;
   width: 15px;
 }
-body header .header-container #burger-menu .third-line-active {
-  position: relative;
-  bottom: 3px;
-  height: 3px;
+body header .header-container #burger-menu.burger-menu-active .first {
   width: 20px;
-  transition: 0.6s;
-  transform: translateZ(0) scaleX(1) rotateX(0deg) rotateY(0deg) rotate(-45deg) skew(0deg, 0deg);
-  transform-style: preserve-3d;
+  transform: rotate(-45deg) translateY(10px) translateX(-2px);
+}
+body header .header-container #burger-menu.burger-menu-active .second {
+  opacity: 0;
+}
+body header .header-container #burger-menu.burger-menu-active .third {
+  width: 20px;
+  transform: rotate(45deg) translateY(-8px);
 }
 body header .header-container .language-box {
   height: 70%;
@@ -402,8 +407,13 @@ body header .header-container .language-box .eng-box-active {
 body header .header-container .language-box .eng-box-none {
   display: none;
 }
+body header .drop-none {
+  display: none;
+}
+body header .drop-active {
+  display: block;
+}
 body header #drop-down-container {
-  display: grid;
   padding: 32px 45px;
   background-color: #ffffff;
   position: absolute;
@@ -449,33 +459,38 @@ body header #drop-down-container .drop-down-box .list-box {
   display: flex;
   gap: 45px;
 }
-body header #drop-down-container .drop-down-box .list-box ul {
-  display: flex;
+body header #drop-down-container .drop-down-box .list-box div {
+  width: 96.25px;
+}
+body header #drop-down-container .drop-down-box .list-box div ul {
+  display: none;
   flex-direction: column;
   gap: 24px;
 }
-body header #drop-down-container .drop-down-box .list-box ul li {
+body header #drop-down-container .drop-down-box .list-box div ul li {
   cursor: pointer;
-  width: 96.25px;
   font-family: "regular";
   font-size: 16px;
   color: #222;
 }
 @media (min-width: 1440px) {
-  body header #drop-down-container .drop-down-box .list-box ul li {
+  body header #drop-down-container .drop-down-box .list-box div ul li {
     font-family: "medium";
     font-size: 14px;
   }
 }
-body header #drop-down-container .drop-down-box .list-box ul li:hover {
+body header #drop-down-container .drop-down-box .list-box div ul li:hover {
   color: #182cc0;
   transition: 0.5s;
 }
-body header #drop-down-container .drop-down-box .list-box .first-list {
+body header #drop-down-container .drop-down-box .list-box div .list-active {
+  display: flex;
+}
+body header #drop-down-container .drop-down-box .list-box div .first-list {
   padding-left: 15px;
 }
 @media (min-width: 1440px) {
-  body header #drop-down-container .drop-down-box .list-box .first-list {
+  body header #drop-down-container .drop-down-box .list-box div .first-list {
     padding-left: 0;
   }
 }

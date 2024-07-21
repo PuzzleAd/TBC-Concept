@@ -17,18 +17,56 @@ languageBox.addEventListener("mouseleave", () => {
 
 const burgerMenu = document.getElementById("burger-menu");
 
-const burgerMenuTransition = () => {
-  const firstLine = document.getElementById("first-line");
-  const secondLine = document.getElementById("second-line");
-  const thirdLine = document.getElementById("third-line");
+burgerMenu.addEventListener("click", () => {
+  burgerMenu.classList.toggle("burger-menu-active");
+});
 
-  firstLine.classList.toggle("first-line-active");
+// dropDownBox dynamic side
 
-  secondLine.classList.toggle("second-line-active");
+const navArray = Array.from(document.querySelectorAll("#nav-box"));
 
-  thirdLine.classList.toggle("third-line-active")
+const dropDownToggle = () => {
+  let isActive = navArray.some((element) =>
+    element.classList.contains("nav-active")
+  );
+
+  const dropContainer = document.getElementById("drop-down-container");
+
+  isActive
+    ? (dropContainer.className = "drop-active")
+    : (dropContainer.className = "drop-none");
 };
 
-burgerMenu.addEventListener("click", () => {
-  burgerMenuTransition();
+const onlyOneActive = (arr, activeElement, className) => {
+  arr.forEach((element) => {
+    if (element !== activeElement) {
+      element.className = className;
+    }
+  });
+};
+
+const listDropper = (activeIndex) => {
+  const listArray = Array.from(document.querySelectorAll("#drop-down-list"));
+
+  listArray.forEach((element, index, array) => {
+    if (array[activeIndex].classList.contains("list-active")) {
+      array[activeIndex].classList.remove("list-active");
+      array[activeIndex].classList.add("list-none");
+    } else {
+      array[activeIndex].classList.add("list-active");
+      array[activeIndex].classList.remove("list-none");
+      onlyOneActive(array, array[activeIndex], "list-none");
+    }
+  });
+};
+
+navArray.forEach((element, index, array) => {
+  element.addEventListener("click", () => {
+    element.classList.contains("nav-active")
+      ? (element.className = "nav-none")
+      : (element.className = "nav-active");
+    onlyOneActive(array, element, "nav-none");
+    dropDownToggle();
+    listDropper(index);
+  });
 });

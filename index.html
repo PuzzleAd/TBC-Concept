@@ -63,9 +63,18 @@
           ></rect>
         </svg>
         <nav>
-          <div>პროდუქტები</div>
-          <div>შეთავაზებები</div>
-          <div>კონცეპტის სივრცე</div>
+          <div id="nav-box">
+            პროდუქტები
+            <div id="nav-box-line" class="nav-line-none"></div>
+          </div>
+          <div id="nav-box">
+            შეთავაზებები
+            <div id="nav-box-line" class="nav-line-none"></div>
+          </div>
+          <div id="nav-box">
+            კონცეპტის სივრცე
+            <div id="nav-box-line" class="nav-line-none"></div>
+          </div>
         </nav>
         <div class="header-right">
           <svg
@@ -98,7 +107,7 @@
             </svg>
             <p>გამოიწერეთ ნაკრები</p>
           </div>
-          <div id="burger-menu" class="burger-menu">
+          <div id="burger-menu" >
             <div id="first-line" class="first"></div>
             <div id="second-line" class="second"></div>
             <div id="third-line" class="third"></div>
@@ -120,13 +129,13 @@
               </svg>
               <p>ქარ</p>
             </div>
-            <div id="eng-box" class="eng-box">
+            <div id="eng-box" class="eng-box-none">
               <p>Eng</p>
             </div>
           </div>
         </div>
       </div>
-      <div id="drop-down-container">
+      <div id="drop-down-container" class="drop-none">
         <div class="drop-down-box">
           <div class="image-box">
             <img src="./Assets/images/drowDown-image.png" alt="" />
@@ -148,22 +157,28 @@
             </a>
           </div>
           <div class="list-box">
-            <ul class="first-list">
-              <li>პროდუქტების მიმოხილვა</li>
-              <li>ნაკრები</li>
-              <li>პირადი ბანკირი</li>
-            </ul>
-            <ul>
-              <li>მიმოხილვა</li>
-              <li>შეთავაზებები</li>
-              <li>ღონისძიებები</li>
-            </ul>
-            <ul>
-              <li>მიმოხილვა</li>
-              <li>კაფე</li>
-              <li>ბიბლიოთეკა</li>
-              <li>კონცეპტ ფილიალები</li>
-            </ul>
+            <div>
+              <ul id="drop-down-list" class="first-list">
+                <li>პროდუქტების მიმოხილვა</li>
+                <li>ნაკრები</li>
+                <li>პირადი ბანკირი</li>
+              </ul>
+            </div>
+            <div>
+              <ul id="drop-down-list">
+                <li>მიმოხილვა</li>
+                <li>შეთავაზებები</li>
+                <li>ღონისძიებები</li>
+              </ul>
+            </div>
+            <div>
+              <ul id="drop-down-list">
+                <li>მიმოხილვა</li>
+                <li>კაფე</li>
+                <li>ბიბლიოთეკა</li>
+                <li>კონცეპტ ფილიალები</li>
+              </ul>
+            </div>
           </div>
           <div class="blank-box"></div>
         </div>
