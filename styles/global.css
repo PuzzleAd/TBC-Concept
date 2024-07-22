@@ -1,14 +1,14 @@
 @font-face {
   font-family: "regular";
-  src: url(../../Assets/fonts/TBCXRegular.dee156cc.woff2);
+  src: url(../../assets/fonts/TBCXRegular.dee156cc.woff2);
 }
 @font-face {
   font-family: "medium";
-  src: url(../../Assets/fonts/TBCXMedium.8ef1248a.woff2);
+  src: url(../../assets/fonts/TBCXMedium.8ef1248a.woff2);
 }
 @font-face {
   font-family: "bold";
-  src: url(../../Assets/fonts/TBCXBold.6db5e61d.woff2);
+  src: url(../../assets/fonts/TBCXBold.6db5e61d.woff2);
 }
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
@@ -169,16 +169,19 @@ button {
   }
 }
 body {
-  background-color: #f9fafa;
   height: 100vh;
+  background-color: #f9fafa;
   font-family: "regular";
   line-height: 1.7;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 }
 body header {
-  position: fixed;
-  top: 0;
   width: 100%;
   height: 80px;
+  position: fixed;
+  top: 0;
   padding: 0 15px;
   background-color: white;
   border-bottom: 1px solid #eef1f1;
@@ -435,6 +438,11 @@ body header #drop-down-container {
   right: 0;
   animation: fade 0.5s ease-in-out;
 }
+@media only screen and (max-width: 1024px) {
+  body header #drop-down-container {
+    display: none;
+  }
+}
 body header #drop-down-container .drop-down-box {
   width: 100%;
   max-width: 1100px;
@@ -525,6 +533,11 @@ body header #menu-container {
   bottom: 0;
   background-color: white;
   animation: fade 0.5s ease-in-out;
+}
+@media (min-width: 1024px) {
+  body header #menu-container {
+    display: none !important;
+  }
 }
 body header #menu-container .menu-nav-box {
   width: 100%;
@@ -619,6 +632,7 @@ body header #menu-container .contact-container .contact-box {
 }
 body header #menu-container .contact-container .contact-box .contact-info {
   display: flex;
+  align-items: center;
   gap: 10px;
   font-family: "medium";
   font-size: 14px;
@@ -766,7 +780,6 @@ body header #menu-container .last-box .right-side a {
   width: 48px;
   height: 48px;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   border-radius: 50%;
@@ -816,6 +829,7 @@ body header #menu-container .last-box .right-side a {
   }
 }
 .button-menu .active-menu div {
+  cursor: pointer;
   width: 48px;
   height: 48px;
   background-color: white;
@@ -835,9 +849,33 @@ body header #menu-container .last-box .right-side a {
 }
 
 #main-footer-container {
-  position: relative;
-  top: 80px;
-  width: 2px;
-  height: 2000px;
+  margin-top: 80px;
+  width: 100%;
+  overflow-y: scroll;
   animation: fade 0.5s ease-in-out;
+  flex: 1;
+}
+#main-footer-container::-webkit-scrollbar {
+  width: 0;
+  -webkit-transition: width 0.5s ease;
+  transition: width 0.5s ease;
+}
+#main-footer-container.show-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+#main-footer-container.show-scrollbar::-webkit-scrollbar-track {
+  background: rgba(222, 222, 222, 0.75);
+  border-radius: 4px;
+}
+#main-footer-container.show-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 2px;
+}
+#main-footer-container.show-scrollbar::-webkit-scrollbar-button {
+  display: none;
+}
+#main-footer-container div {
+  height: 800px;
+  width: 100%;
+  background-color: antiquewhite;
 }/*# sourceMappingURL=global.css.map */

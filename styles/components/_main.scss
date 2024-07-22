@@ -21,10 +21,7 @@
     cursor: pointer;
     width: 48px;
     height: 48px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    @include container(flex, center, center);
     border-radius: 50%;
     background-color: #424a4d;
     transition: background-color 0.25s ease-in-out;
@@ -38,7 +35,7 @@
 
     svg {
       fill: white;
-      animation: fade .5s ease-in;
+      animation: fade 0.5s ease-in;
     }
     .open-svg {
       display: block;
@@ -68,6 +65,7 @@
       margin-bottom: 12px;
     }
     div {
+      cursor: pointer;
       width: 48px;
       height: 48px;
       background-color: white;
@@ -85,9 +83,34 @@
 }
 
 #main-footer-container {
-  position: relative;
-  top: 80px;
-  width: 2px;
-  height: 2000px;
-  animation: fade .5s ease-in-out;
+  margin-top: 80px;
+  width: 100%;
+  overflow-y: scroll;
+  animation: fade 0.5s ease-in-out;
+  flex: 1;
+  &::-webkit-scrollbar {
+    width: 0;
+    transition: width 0.5s ease;
+  }
+  &.show-scrollbar {
+    &::-webkit-scrollbar {
+      width: 8px;
+    }
+    &::-webkit-scrollbar-track {
+      background: rgba(222, 222, 222, .75);
+      border-radius: 4px;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: rgba(0, 0, 0, .5);
+      border-radius: 2px;
+    }
+    &::-webkit-scrollbar-button {
+      display: none;
+    }
+  }
+  div {
+    height: 800px;
+    width: 100%;
+    background-color: antiquewhite;
+  }
 }
