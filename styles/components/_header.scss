@@ -40,9 +40,10 @@ body {
           display: none;
         }
         .laptop-svg {
-          display: block;
           width: 190px;
-          cursor: pointer;
+          display: block;
+          position: relative;
+          left: -12.5px;
         }
       }
       nav {
@@ -196,7 +197,7 @@ body {
         }
         #eng-box {
           position: absolute;
-          z-index: 102;
+          z-index: 105;
           top: 55px;
           cursor: pointer;
           justify-content: center;
@@ -237,6 +238,7 @@ body {
       top: 80px;
       left: 0;
       right: 0;
+      z-index: 102;
       animation: fade 0.5s ease-in-out;
       @media only screen and (max-width: 1024px) {
         display: none;

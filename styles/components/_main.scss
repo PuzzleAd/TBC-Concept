@@ -110,6 +110,9 @@
       display: none;
     }
   }
+  @include responsive(large) {
+    display: block !important;
+  }
   main {
     .breadcrumbs-container {
       width: 100%;
@@ -156,6 +159,7 @@
         height: 360px;
         position: relative;
         overflow: hidden;
+        z-index: -99;
         border-radius: 4px;
         @include responsive(small) {
           height: 450px;
@@ -171,6 +175,7 @@
           width: inherit;
           height: inherit;
           object-fit: cover;
+          filter: contrast(100%) brightness(70%);
         }
         .image-message-text {
           display: flex;
@@ -180,6 +185,7 @@
           bottom: 20px;
           left: 15px;
           right: 15px;
+
           @include responsive(small) {
             gap: 20px;
             bottom: 36px;
@@ -250,7 +256,7 @@
       @include responsive(medium) {
         padding: 50px 45px;
       }
-      @include responsive (large) {
+      @include responsive(large) {
         padding: 60px 45px;
         display: flex;
         justify-content: center;
@@ -267,11 +273,147 @@
         @include responsive(medium) {
           font-size: 32px;
         }
-        @include responsive (largest) {
+        @include responsive(largest) {
           font-size: 36px;
         }
       }
     }
-    
+    .section-choose-concept {
+      width: 100%;
+      padding: 36px 15px;
+      @include responsive(small) {
+        padding: 40px 45px;
+      }
+      @include responsive(large) {
+        padding: 60px 45px;
+        display: flex;
+        justify-content: center;
+      }
+      .section-choose-concept-box {
+        width: 100%;
+        max-width: 1110px;
+        .section-choose-concept-header {
+          font-family: "bold";
+          font-size: 14px;
+          color: $swiper-h-color;
+          margin-bottom: 20px;
+          @include responsive(small) {
+            font-size: 24px;
+            margin-bottom: 28px;
+          }
+          @include responsive(large) {
+            margin-bottom: 45px;
+          }
+          @include responsive(largest) {
+            margin-bottom: 36px;
+          }
+        }
+        .section-choose-concept-card-box {
+          width: 100%;
+          display: grid;
+          gap: 16px;
+          grid-template-areas: "first second third";
+          overflow-x: scroll;
+          #first-card {
+            grid-area: first;
+          }
+          #second-card {
+            grid-area: second;
+          }
+          #third-card {
+            grid-area: third;
+          }
+          @include responsive(medium) {
+            overflow: hidden;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: auto auto;
+            grid-template-areas:
+              "first second"
+              "third second";
+            gap: 20px;
+            #second-card {
+              height: 494px;
+            }
+          }
+          @include responsive(large) {
+            gap: 30px;
+            #second-card {
+              height: 542px;
+            }
+          }
+          .section-card {
+            cursor: pointer;
+            width: inherit;
+            min-width: 280px;
+            height: 232px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            &:hover img {
+              transform: scale(1.025);
+            }
+            @include responsive(large) {
+              height: 256px;
+            }
+            img {
+              width: inherit;
+              height: inherit;
+              object-fit: cover;
+              display: block;
+              filter: contrast(80%) brightness(80%);
+              transition: transform 0.5s ease;
+            }
+            .card-text {
+              position: absolute;
+              left: 24px;
+              bottom: 24px;
+              @include responsive(large) {
+                left: 40px;
+                bottom: 40px;
+              }
+              h1 {
+                font-family: "bold";
+                font-size: 16px;
+                color: white;
+                @include responsive(medium) {
+                  font-size: 24px;
+                }
+              }
+              .card-text-link {
+                @include container(flex, auto, center);
+                gap: 6px;
+                margin-top: 20px;
+                line-height: 1.4;
+
+                &:hover {
+                  svg {
+                    fill: #aeaeae;
+                    transition: 0.5s ease-in-out;
+                  }
+                  a {
+                    color: #aeaeae;
+                    text-decoration: none;
+                    transition: 0.25s ease-in-out;
+                  }
+                }
+                svg {
+                  fill: white;
+                }
+                a {
+                  font-family: "bold";
+                  font-size: 12px;
+                  color: white;
+                  text-decoration: underline;
+                  margin-top: 2px;
+                  @include responsive(small) {
+                    font-size: 14px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
   }
 }

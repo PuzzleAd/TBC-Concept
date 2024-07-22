@@ -127,14 +127,14 @@ buttonMenu.addEventListener("click", () => {
 
 // scroll styling
 
-const footerContainer = document.getElementById('main-footer-container');
+const footerContainer = document.getElementById("main-footer-container");
 let scrollTimeout;
 
-footerContainer.addEventListener('scroll', () => {
-  footerContainer.classList.add('show-scrollbar');
+footerContainer.addEventListener("scroll", () => {
+  footerContainer.classList.add("show-scrollbar");
 
   clearTimeout(scrollTimeout);
   scrollTimeout = setTimeout(() => {
-    footerContainer.classList.remove('show-scrollbar');
-  }, 1000); // 1 second
+    footerContainer.classList.remove("show-scrollbar");
+  }, 1000);
 });
