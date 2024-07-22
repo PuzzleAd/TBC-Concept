@@ -34,6 +34,11 @@ const burgerMenuActivation = () => {
   burgerMenuIcon.classList.contains("burger-menu-active")
     ? (header.style.backgroundColor = "#f9fafa")
     : (header.style.backgroundColor = "white");
+
+  const triggerMenu = document.querySelector(".button-menu");
+  burgerMenuIcon.classList.contains("burger-menu-active")
+    ? (triggerMenu.style.display = "none")
+    : (triggerMenu.style.display = "block");
 };
 
 burgerMenuIcon.addEventListener("click", () => {
@@ -110,4 +115,12 @@ accArray.forEach((element, index, array) => {
     element.classList.toggle("active");
     accordionActive(array, element, "active");
   });
+});
+
+// button menu logic
+
+const buttonMenu = document.getElementById("trigger-box");
+
+buttonMenu.addEventListener("click", () => {
+  buttonMenu.classList.toggle("active");
 });

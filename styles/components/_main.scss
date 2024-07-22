@@ -1,6 +1,93 @@
+.button-menu {
+  position: fixed;
+  z-index: 95;
+  right: 15px;
+  bottom: 15px;
+  display: flex;
+  flex-direction: column-reverse;
+  @include responsive(small) {
+    bottom: 24px;
+    right: 24px;
+  }
+  @include responsive(large) {
+    bottom: 32px;
+    right: 32px;
+  }
+  @include responsive(largest) {
+    bottom: 40px;
+    right: 40px;
+  }
+  #trigger-box {
+    cursor: pointer;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: #424a4d;
+    transition: background-color 0.25s ease-in-out;
+    @include responsive(small) {
+      width: 56px;
+      height: 56px;
+    }
+    &:hover {
+      background-color: rgba(66, 74, 77, 0.8);
+    }
+
+    svg {
+      fill: white;
+      animation: fade .5s ease-in;
+    }
+    .open-svg {
+      display: block;
+    }
+    &.active .open-svg {
+      display: none;
+    }
+    .close-svg {
+      display: none;
+    }
+    &.active .close-svg {
+      display: block;
+    }
+    &.active ~ .active-menu {
+      display: flex;
+    }
+  }
+  .active-menu {
+    display: none;
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+    animation: fade 1s ease-in;
+    @include responsive(small) {
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+    div {
+      width: 48px;
+      height: 48px;
+      background-color: white;
+      border-radius: 50%;
+      @include container(flex, center, center);
+      @include responsive(small) {
+        width: 56px;
+        height: 56px;
+      }
+      svg {
+        fill: $gray-color;
+      }
+    }
+  }
+}
+
 #main-footer-container {
   position: relative;
   top: 80px;
   width: 2px;
   height: 2000px;
+  animation: fade .5s ease-in-out;
 }
