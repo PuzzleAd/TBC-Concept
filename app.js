@@ -1,17 +1,25 @@
 // making Eng container appear and dissappear
 
-const geoBox = document.getElementById("geo-box");
-const languageBox = document.getElementById("language-box");
+const geoBox = Array.from(document.querySelectorAll("#geo-box"));
+const languageBox = Array.from(document.querySelectorAll("#language-box"))
 
-geoBox.addEventListener("mouseenter", () => {
-  const engBox = document.getElementById("eng-box");
-  engBox.className = "eng-box-active";
-});
+geoBox.forEach((element, index) => {
+  element.addEventListener("mouseenter", () => {
+    const engBox = Array.from(document.querySelectorAll("#eng-box"));
+    engBox[index].className = "eng-box-active";
+  });
+})
 
-languageBox.addEventListener("mouseleave", () => {
-  const engBox = document.getElementById("eng-box");
-  engBox.className = "eng-box-none";
-});
+languageBox.forEach((element, index) => {
+  element.addEventListener("mouseleave", () => {
+    const engBox = Array.from(document.querySelectorAll("#eng-box"));
+    engBox[index].className = "eng-box-none";
+  });
+  
+})
+
+console.log(geoBox);
+console.log(languageBox);
 
 // burger menu transition
 

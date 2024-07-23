@@ -1,0 +1,367 @@
+#main-footer-container {
+  footer {
+    width: 100%;
+    padding-top: 36px;
+    @include responsive(small) {
+      padding-top: 40px;
+    }
+    .footer-container {
+      width: inherit;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: white;
+      .footer-top {
+        width: inherit;
+        max-width: 1110px;
+        @include container(flex, space-between, center);
+        padding: 32px 15px;
+        border-bottom: 1px solid #d1d5d6;
+        @include responsive(small) {
+          padding: 32px 45px;
+        }
+        @include responsive(medium) {
+          padding: 45px 45px 50px;
+          border: none;
+        }
+        .tbc-svg-phone {
+          width: 36px;
+          height: 32px;
+          @include responsive(medium) {
+            display: none;
+          }
+        }
+        .tbc-svg-laptop {
+          display: none;
+          @include responsive(medium) {
+            display: block;
+          }
+        }
+        .language-box {
+          height: 70%;
+          @include container(flex, auto, center);
+          position: relative;
+          &:hover .geo-box {
+            background-color: gainsboro;
+            transition: background-color 0.5s ease-in;
+          }
+          .geo-box {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            font-family: "bold";
+            font-size: 14px;
+            color: $gray-color;
+            padding: 8px;
+            border-radius: 4px;
+            @include responsive(largest) {
+              font-size: 16px;
+            }
+          }
+          #eng-box {
+            position: absolute;
+            z-index: 105;
+            top: 45px;
+            cursor: pointer;
+            justify-content: center;
+            font-family: "medium";
+            font-size: 14px;
+            color: $nav-color;
+            padding: 12px 18px;
+            border: 1px solid #e1e4e5;
+            border-radius: 4px;
+            box-shadow: 0 4px 6px 2px rgba(12, 43, 67, 0.05);
+            background-color: white;
+            &:hover {
+              background-color: $bd-bg;
+              transition: background-color 0.25s ease-in-out;
+            }
+            @include responsive(largest) {
+              font-size: 16px;
+            }
+          }
+          .eng-box-active {
+            display: flex;
+          }
+          .eng-box-none {
+            display: none;
+          }
+        }
+      }
+      .footer-nav-phone {
+        width: inherit;
+        @include responsive(medium) {
+          display: none;
+        }
+        .nav-item {
+          padding: 24px 15px 4px;
+          border-bottom: 1px solid #d1d5d6;
+          @include responsive(small) {
+            padding: 36px 45px 16px;
+          }
+          #top {
+            @include container(flex, space-between, center);
+            h3 {
+              font-family: "bold";
+              font-size: 16px;
+              color: $swiper-h-color;
+              @include responsive(small) {
+                font-size: 24px;
+              }
+            }
+            svg {
+              transition: transform 0.5s ease-in;
+            }
+            &.active + .bottom {
+              max-height: 150px;
+              @include responsive(small);
+            }
+
+            &.active svg {
+              transform: rotate(180deg);
+            }
+          }
+          .bottom {
+            max-height: 0;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            padding-top: 20px;
+            transition: max-height 1.3s ease;
+            @include responsive(small) {
+              gap: 24px;
+            }
+            p {
+              font-size: 14px;
+              color: $gray-color;
+              @include responsive(small) {
+                font-size: 16px;
+              }
+            }
+          }
+        }
+        .contact-container {
+          width: 100%;
+          padding: 32px 15px;
+          border-bottom: 1px solid #eef1f1;
+          @include responsive(small) {
+            padding: 56px 45px;
+          }
+          .contact-us {
+            font-family: "bold";
+            font-size: 16px;
+            color: $swiper-h-color;
+            margin-bottom: 16px;
+            @include responsive(small) {
+              font-size: 24px;
+            }
+          }
+          .contact-box {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+            margin: 32px 0 48px 0;
+            @include responsive(small) {
+              margin: 32px 0;
+            }
+            .contact-info {
+              display: flex;
+              align-items: center;
+              gap: 10px;
+              font-family: "medium";
+              font-size: 14px;
+              color: $gray-color;
+            }
+          }
+          .social-container {
+            h3 {
+              font-family: "bold";
+              font-size: 16px;
+              margin-bottom: 24px;
+              @include responsive(small) {
+                font-size: 24px;
+              }
+            }
+            .social-icons-box {
+              display: flex;
+              gap: 15px;
+              a {
+                width: 52px;
+                height: 52px;
+                @include container(flex, center, center);
+                background-color: $bd-bg;
+                border-radius: 6px;
+                svg {
+                  fill: $gray-color;
+                }
+                &:hover {
+                  background-color: #e1e4e5;
+                  transition: 0.5s;
+                  svg {
+                    fill: $blue-color;
+                    transition: 0.5s;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      .footer-nav-tablet-laptop {
+        width: inherit;
+        max-width: 1110px;
+        display: none;
+        padding: 0 45px 45px;
+        @include responsive(medium) {
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr 1fr;
+        }
+        .old-accordion {
+          h1 {
+            font-family: "bold";
+            font-size: 14px;
+            color: $swiper-h-color;
+            margin-bottom: 24px;
+            @include responsive(largest) {
+              font-size: 16px;
+            }
+          }
+          ul {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            li {
+              font-size: 14px;
+              color: $gray-color;
+              width: min-content;
+              @include responsive(large) {
+                width: max-content;
+              }
+              @include responsive(largest) {
+                font-size: 16px;
+              }
+            }
+          }
+        }
+        .contact-container {
+          .contact-us {
+            font-family: "bold";
+            font-size: 14px;
+            color: $swiper-h-color;
+            @include responsive(largest) {
+              font-size: 16px;
+            }
+          }
+          .contact-box {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin: 32px 0;
+            .contact-info {
+              display: flex;
+              align-items: center;
+              gap: 10px;
+              font-family: "medium";
+              font-size: 14px;
+              color: $gray-color;
+              @include responsive(largest) {
+                font-size: 16px;
+              }
+            }
+          }
+          .social-container {
+            h3 {
+              font-family: "bold";
+              font-size: 14px;
+              margin-bottom: 16px;
+              @include responsive(largest) {
+                font-size: 16px;
+              }
+            }
+            .social-icons-box {
+              display: flex;
+              gap: 4px;
+              a {
+                width: 40px;
+                height: 40px;
+                @include container(flex, center, center);
+                background-color: $bd-bg;
+                border-radius: 6px;
+                svg {
+                  fill: $gray-color;
+                }
+                &:hover {
+                  background-color: #e1e4e5;
+                  transition: 0.5s;
+                  svg {
+                    fill: $blue-color;
+                    transition: 0.5s;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      .footer-last-container {
+        width: 100%;
+        background-color: $bd-bg;
+        display: flex;
+        justify-content: center;
+        .footer-last-box {
+          width: inherit;
+          max-width: 1110px;
+          display: flex;
+          flex-direction: column-reverse;
+          gap: 24px;
+          padding: 24px 15px;
+          @include responsive(small) {
+            padding: 32px 45px;
+            gap: 32px;
+          }
+          @include responsive(medium) {
+            gap: 0;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+          }
+          .left-side {
+            @include container(flex, auto, center);
+            gap: 8px;
+            svg {
+              width: 21px;
+              fill: $swiper-p-color;
+            }
+            p {
+              font-size: 12px;
+              color: $swiper-p-color;
+              @include responsive(small) {
+                font-size: 14px;
+              }
+              @include responsive(medium) {
+                color: $gray-color;
+                font-size: 12px;
+              }
+            }
+          }
+          .right-side {
+            display: flex;
+            gap: 30px;
+            a {
+              color: $gray-color;
+              font-size: 12px;
+              @include responsive(small) {
+                font-size: 14px;
+              }
+              @include responsive(medium) {
+                font-size: 12px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

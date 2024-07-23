@@ -347,6 +347,7 @@
             min-width: 280px;
             height: 232px;
             position: relative;
+            z-index: -99;
             overflow: hidden;
             border-radius: 8px;
             &:hover img {
@@ -551,7 +552,7 @@
               border-radius: 4px;
               &:hover {
                 border: 1px solid #e1e4e5;
-                transition: .25s;
+                transition: 0.25s;
               }
               @include responsive(medium) {
                 width: 160px;
@@ -576,7 +577,7 @@
                   border-radius: 4px;
                   &:hover {
                     background-color: #e1e4e5;
-                    transition: .5s ease-in-out;
+                    transition: 0.5s ease-in-out;
                   }
                 }
               }
@@ -599,6 +600,5 @@
         }
       }
     }
-    
   }
 }
