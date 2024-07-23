@@ -415,5 +415,61 @@
         }
       }
     }
+    .section-numbers {
+      width: 100%;
+      padding: 36px 15px;
+      @include responsive(small) {
+        padding: 40px 45px;
+      }
+      @include responsive(medium) {
+        padding: 50px 45px;
+      }
+      @include responsive(large) {
+        padding: 60px 45px;
+        display: flex;
+        justify-content: center;
+      }
+      .section-numbers-box {
+        width: inherit;
+        max-width: 1110px;
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr;
+        gap: 16px;
+        @include responsive(small) {
+          gap: 30px;
+        }
+        @include responsive(large) {
+          grid-template-columns: 1fr 1fr 1fr;
+          grid-template-rows: 1fr;
+        }
+        .section-numbers-card {
+          display: flex;
+          flex-direction: column;
+          gap: 16px;
+          padding: 24px;
+          background-color: white;
+          border-radius: 8px;
+          @include responsive(small) {
+            padding: 40px 48px;
+          }
+          h1 {
+            font-family: "bold";
+            font-size: 36px;
+            color: $swiper-h-color;
+            @include responsive(small) {
+              font-size: 44px;
+            }
+          }
+          p {
+            font-family: "medium";
+            font-size: 14px;
+            color: $gray-color;
+            @include responsive(small) {
+              font-size: 16px;
+            }
+          }
+        }
+      }
+    }
   }
 }
