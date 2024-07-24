@@ -134,7 +134,7 @@ buttonMenu.addEventListener("click", () => {
   buttonMenu.classList.toggle("active");
 });
 
-// scroll styling and swiper logic
+// scroll styling
 
 const footerContainer = document.getElementById("main-footer-container");
 let scrollTimeout;
@@ -148,8 +148,7 @@ footerContainer.addEventListener("scroll", () => {
   }, 1000);
 });
 
-
-
+// first swiper my own logic
 
 document.addEventListener("DOMContentLoaded", () => {
   const slider = document.querySelector(".section-offers-slider");
