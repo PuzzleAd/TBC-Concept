@@ -471,6 +471,150 @@
         }
       }
     }
+    .section-offers {
+      width: 100%;
+      padding: 36px 0 36px 15px;
+      @include responsive(small) {
+        padding: 40px 0 40px 45px;
+      }
+      @include responsive(medium) {
+        padding: 50px 0 50px 45px;
+      }
+      @include responsive(large) {
+        display: flex;
+        justify-content: center;
+        padding: 60px 45px;
+      }
+      .section-offers-container {
+        width: inherit;
+        max-width: 1110px;
+        .section-offers-header {
+          width: inherit;
+          @include container(flex, space-between, center);
+          margin-bottom: 20px;
+          @include responsive(small) {
+            margin-bottom: 28px;
+          }
+          @include responsive(medium) {
+            margin-bottom: 36px;
+          }
+          h1 {
+            font-family: "bold";
+            font-size: 14px;
+            color: $swiper-h-color;
+            @include responsive(small) {
+              font-size: 24px;
+            }
+          }
+          .header-right-side {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            svg {
+              fill: $blue-color;
+            }
+            p {
+              font-family: "bold";
+              font-size: 12px;
+              color: $blue-color;
+              margin-top: 2px;
+              @include responsive(small) {
+                font-size: 14px;
+              }
+            }
+          }
+        }
+        .section-offers-slider {
+          width: inherit;
+          display: flex;
+          gap: 16px;
+          overflow-x: scroll;
+          box-sizing: content-box;
+          .section-offers-card {
+            min-width: 80%;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            border: 1px solid #e1e4e5;
+            border-radius: 6px;
+            background-color: transparent;
+            @include responsive(small) {
+              min-width: 45%;
+            }
+            @include responsive(medium) {
+              border-radius: 8px;
+            }
+            @include responsive(large) {
+              min-width: 40%;
+            }
+            @include responsive (largest) {
+              min-width: 32%;
+            }
+            .card-image-box {
+              position: relative;
+              height: 50%;
+              overflow: hidden;
+              @include responsive(large) {
+                height: 70%;
+              }
+              @include responsive(largest) {
+                height: 50%;
+              }
+              .big-image {
+                width: 100%;
+                height: 100%;
+                border-top-left-radius: 6px;
+                border-top-right-radius: 6px;
+                @include responsive(medium) {
+                  border-top-left-radius: 8px;
+                  border-top-right-radius: 8px;
+                }
+              }
+              .small-image {
+                width: 78px;
+                height: 56px;
+                position: absolute;
+                top: 20px;
+                right: 0;
+                border-top-left-radius: 6px;
+                border-bottom-left-radius: 6px;
+              }
+            }
+            .card-text-box {
+              display: flex;
+              flex-direction: column;
+              gap: 12px;
+              padding: 20px 20px 40px;
+              @include responsive(small) {
+                padding: 20px;
+              }
+              @include responsive(medium) {
+                gap: 16px;
+                padding: 28px;
+              }
+              p {
+                font-family: "bold";
+                font-size: 12px;
+                color: $swiper-p-color;
+              }
+              h1 {
+                font-family: "bold";
+                font-size: 14px;
+                color: $swiper-h-color;
+                @include responsive(medium) {
+                  font-size: 16px;
+                }
+              }
+              .p-text-box {
+                display: flex;
+                gap: 10px;
+              }
+            }
+          }
+        }
+      }
+    }
     .section-digital-bank {
       width: 100%;
       padding: 32px 0;

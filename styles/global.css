@@ -1315,6 +1315,186 @@ header #menu-container .last-box .right-side a {
     font-size: 16px;
   }
 }
+#main-footer-container main .section-offers {
+  width: 100%;
+  padding: 36px 0 36px 15px;
+}
+@media (min-width: 479px) {
+  #main-footer-container main .section-offers {
+    padding: 40px 0 40px 45px;
+  }
+}
+@media (min-width: 767px) {
+  #main-footer-container main .section-offers {
+    padding: 50px 0 50px 45px;
+  }
+}
+@media (min-width: 1024px) {
+  #main-footer-container main .section-offers {
+    display: flex;
+    justify-content: center;
+    padding: 60px 45px;
+  }
+}
+#main-footer-container main .section-offers .section-offers-container {
+  width: inherit;
+  max-width: 1110px;
+}
+#main-footer-container main .section-offers .section-offers-container .section-offers-header {
+  width: inherit;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+@media (min-width: 479px) {
+  #main-footer-container main .section-offers .section-offers-container .section-offers-header {
+    margin-bottom: 28px;
+  }
+}
+@media (min-width: 767px) {
+  #main-footer-container main .section-offers .section-offers-container .section-offers-header {
+    margin-bottom: 36px;
+  }
+}
+#main-footer-container main .section-offers .section-offers-container .section-offers-header h1 {
+  font-family: "bold";
+  font-size: 14px;
+  color: #141719;
+}
+@media (min-width: 479px) {
+  #main-footer-container main .section-offers .section-offers-container .section-offers-header h1 {
+    font-size: 24px;
+  }
+}
+#main-footer-container main .section-offers .section-offers-container .section-offers-header .header-right-side {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+#main-footer-container main .section-offers .section-offers-container .section-offers-header .header-right-side svg {
+  fill: #182cc0;
+}
+#main-footer-container main .section-offers .section-offers-container .section-offers-header .header-right-side p {
+  font-family: "bold";
+  font-size: 12px;
+  color: #182cc0;
+  margin-top: 2px;
+}
+@media (min-width: 479px) {
+  #main-footer-container main .section-offers .section-offers-container .section-offers-header .header-right-side p {
+    font-size: 14px;
+  }
+}
+#main-footer-container main .section-offers .section-offers-container .section-offers-slider {
+  width: inherit;
+  display: flex;
+  gap: 16px;
+  overflow-x: scroll;
+  box-sizing: content-box;
+}
+#main-footer-container main .section-offers .section-offers-container .section-offers-slider .section-offers-card {
+  min-width: 80%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid #e1e4e5;
+  border-radius: 6px;
+  background-color: transparent;
+}
+@media (min-width: 479px) {
+  #main-footer-container main .section-offers .section-offers-container .section-offers-slider .section-offers-card {
+    min-width: 45%;
+  }
+}
+@media (min-width: 767px) {
+  #main-footer-container main .section-offers .section-offers-container .section-offers-slider .section-offers-card {
+    border-radius: 8px;
+  }
+}
+@media (min-width: 1024px) {
+  #main-footer-container main .section-offers .section-offers-container .section-offers-slider .section-offers-card {
+    min-width: 40%;
+  }
+}
+@media (min-width: 1440px) {
+  #main-footer-container main .section-offers .section-offers-container .section-offers-slider .section-offers-card {
+    min-width: 32%;
+  }
+}
+#main-footer-container main .section-offers .section-offers-container .section-offers-slider .section-offers-card .card-image-box {
+  position: relative;
+  height: 50%;
+  overflow: hidden;
+}
+@media (min-width: 1024px) {
+  #main-footer-container main .section-offers .section-offers-container .section-offers-slider .section-offers-card .card-image-box {
+    height: 70%;
+  }
+}
+@media (min-width: 1440px) {
+  #main-footer-container main .section-offers .section-offers-container .section-offers-slider .section-offers-card .card-image-box {
+    height: 50%;
+  }
+}
+#main-footer-container main .section-offers .section-offers-container .section-offers-slider .section-offers-card .card-image-box .big-image {
+  width: 100%;
+  height: 100%;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+}
+@media (min-width: 767px) {
+  #main-footer-container main .section-offers .section-offers-container .section-offers-slider .section-offers-card .card-image-box .big-image {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+  }
+}
+#main-footer-container main .section-offers .section-offers-container .section-offers-slider .section-offers-card .card-image-box .small-image {
+  width: 78px;
+  height: 56px;
+  position: absolute;
+  top: 20px;
+  right: 0;
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+#main-footer-container main .section-offers .section-offers-container .section-offers-slider .section-offers-card .card-text-box {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 20px 20px 40px;
+}
+@media (min-width: 479px) {
+  #main-footer-container main .section-offers .section-offers-container .section-offers-slider .section-offers-card .card-text-box {
+    padding: 20px;
+  }
+}
+@media (min-width: 767px) {
+  #main-footer-container main .section-offers .section-offers-container .section-offers-slider .section-offers-card .card-text-box {
+    gap: 16px;
+    padding: 28px;
+  }
+}
+#main-footer-container main .section-offers .section-offers-container .section-offers-slider .section-offers-card .card-text-box p {
+  font-family: "bold";
+  font-size: 12px;
+  color: #6f787b;
+}
+#main-footer-container main .section-offers .section-offers-container .section-offers-slider .section-offers-card .card-text-box h1 {
+  font-family: "bold";
+  font-size: 14px;
+  color: #141719;
+}
+@media (min-width: 767px) {
+  #main-footer-container main .section-offers .section-offers-container .section-offers-slider .section-offers-card .card-text-box h1 {
+    font-size: 16px;
+  }
+}
+#main-footer-container main .section-offers .section-offers-container .section-offers-slider .section-offers-card .card-text-box .p-text-box {
+  display: flex;
+  gap: 10px;
+}
 #main-footer-container main .section-digital-bank {
   width: 100%;
   padding: 32px 0;
@@ -1541,7 +1721,7 @@ header #menu-container .last-box .right-side a {
   }
 }
 #main-footer-container footer .footer-container .footer-top .language-box {
-  height: 70%;
+  height: 50px;
   display: flex;
   justify-content: auto;
   align-items: center;
