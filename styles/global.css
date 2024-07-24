@@ -809,10 +809,10 @@ header #menu-container .last-box .right-side a {
 .button-menu-section .button-menu #trigger-box.active .close-svg {
   display: block;
 }
-.button-menu-section .button-menu #trigger-box.active ~ .active-menu {
+.button-menu-section .button-menu #trigger-box.active ~ .active-menu-container {
   display: flex;
 }
-.button-menu-section .button-menu .active-menu {
+.button-menu-section .button-menu .active-menu-container {
   display: none;
   flex-direction: column-reverse;
   align-items: center;
@@ -821,28 +821,59 @@ header #menu-container .last-box .right-side a {
   animation: fade 1s ease-in;
 }
 @media (min-width: 479px) {
-  .button-menu-section .button-menu .active-menu {
+  .button-menu-section .button-menu .active-menu-container {
     gap: 12px;
     margin-bottom: 12px;
   }
 }
-.button-menu-section .button-menu .active-menu div {
+.button-menu-section .button-menu .active-menu-container .active-menu-box {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.button-menu-section .button-menu .active-menu-container .active-menu-box .active-menu-box-text {
+  width: -moz-max-content;
+  width: max-content;
+  display: none;
+  position: absolute;
+  right: 70px;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 14px;
+  background-color: #424a4d;
+  color: white;
+}
+.button-menu-section .button-menu .active-menu-container .active-menu-box .active-menu-box-text + .active-menu-hover-box:hover {
+  display: flex;
+}
+.button-menu-section .button-menu .active-menu-container .active-menu-box .active-menu-hover-box {
   cursor: pointer;
   width: 48px;
   height: 48px;
   background-color: white;
   border-radius: 50%;
+  transition: background-color 0.5s ease-in-out;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 @media (min-width: 479px) {
-  .button-menu-section .button-menu .active-menu div {
+  .button-menu-section .button-menu .active-menu-container .active-menu-box .active-menu-hover-box {
     width: 56px;
     height: 56px;
   }
 }
-.button-menu-section .button-menu .active-menu div svg {
+.button-menu-section .button-menu .active-menu-container .active-menu-box .active-menu-hover-box:hover {
+  background-color: #007aff;
+}
+.button-menu-section .button-menu .active-menu-container .active-menu-box .active-menu-hover-box:hover + .active-menu-box-text {
+  display: flex;
+}
+.button-menu-section .button-menu .active-menu-container .active-menu-box .active-menu-hover-box:hover svg {
+  fill: white;
+  transition: 0.5s;
+}
+.button-menu-section .button-menu .active-menu-container .active-menu-box .active-menu-hover-box svg {
   fill: #555f62;
 }
 
@@ -1347,10 +1378,12 @@ header #menu-container .last-box .right-side a {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
+  padding-right: 15px;
 }
 @media (min-width: 479px) {
   #main-footer-container main .section-offers .section-offers-container .section-offers-header {
     margin-bottom: 28px;
+    padding-right: 45px;
   }
 }
 @media (min-width: 767px) {

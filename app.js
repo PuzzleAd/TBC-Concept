@@ -148,7 +148,7 @@ footerContainer.addEventListener("scroll", () => {
   }, 1000);
 });
 
-// first swiper my own logic
+// section-offers swiper my own logic
 
 document.addEventListener("DOMContentLoaded", () => {
   const slider = document.querySelector(".section-offers-slider");
@@ -183,11 +183,11 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!isDragging) return;
     event.preventDefault();
     const x = event.pageX - slider.offsetLeft;
-    const walk = (x - startX) * 1.5; // Adjust the scroll speed if needed
+    const walk = (x - startX) * 1.5; 
     slider.scrollLeft = scrollLeft - walk;
   });
 
   slider.addEventListener("scroll", updateScrollThumb);
   window.addEventListener("resize", updateScrollThumb);
-  updateScrollThumb(); // Initialize on page load
+  updateScrollThumb(); 
 });
