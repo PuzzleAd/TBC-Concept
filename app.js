@@ -1,27 +1,26 @@
 // making Eng container appear and dissappear
 
 const geoBox = Array.from(document.querySelectorAll("#geo-box"));
-const languageBox = Array.from(document.querySelectorAll("#language-box"))
+const languageBox = Array.from(document.querySelectorAll("#language-box"));
 
 geoBox.forEach((element, index) => {
   element.addEventListener("mouseenter", () => {
     const engBox = Array.from(document.querySelectorAll("#eng-box"));
     engBox[index].className = "eng-box-active";
   });
-})
+});
 
 languageBox.forEach((element, index) => {
   element.addEventListener("mouseleave", () => {
     const engBox = Array.from(document.querySelectorAll("#eng-box"));
     engBox[index].className = "eng-box-none";
   });
-  
-})
+});
 
 console.log(geoBox);
 console.log(languageBox);
 
-// burger menu transition
+// burger menu transition and other parts styling after activating burger menu
 
 const burgerMenuIcon = document.getElementById("burger-menu");
 
@@ -54,8 +53,6 @@ burgerMenuIcon.addEventListener("click", () => {
   burgerMenuActivation();
 });
 
-// burger menu appear/disappear
-
 // dropDownBox dynamic side
 
 const navArray = Array.from(document.querySelectorAll("#nav-box"));
@@ -72,6 +69,8 @@ const dropDownToggle = () => {
     : (dropContainer.className = "drop-none");
 };
 
+// managing to be only one activated element in arrays
+
 const onlyOneActive = (arr, activeElement, className) => {
   arr.forEach((element) => {
     if (element !== activeElement) {
@@ -79,6 +78,8 @@ const onlyOneActive = (arr, activeElement, className) => {
     }
   });
 };
+
+// appearing needed list
 
 const listDropper = (activeIndex) => {
   const listArray = Array.from(document.querySelectorAll("#drop-down-list"));

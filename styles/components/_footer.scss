@@ -41,6 +41,7 @@
           height: 70%;
           @include container(flex, auto, center);
           position: relative;
+          z-index: 105;
           &:hover .geo-box {
             background-color: gainsboro;
             transition: background-color 0.5s ease-in;
@@ -61,7 +62,6 @@
           }
           #eng-box {
             position: absolute;
-            z-index: 105;
             top: 45px;
             cursor: pointer;
             justify-content: center;

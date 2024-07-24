@@ -2,6 +2,7 @@ header {
   width: 100%;
   height: 80px;
   position: fixed;
+  z-index: 105;
   top: 0;
   padding: 0 15px;
   background-color: white;
@@ -162,7 +163,6 @@ header {
     }
     .language-box {
       height: 70%;
-
       @include container(flex, auto, center);
       position: relative;
       display: none;
@@ -189,7 +189,7 @@ header {
       }
       #eng-box {
         position: absolute;
-        z-index: 105;
+        z-index: 115;
         top: 55px;
         cursor: pointer;
         justify-content: center;
@@ -230,7 +230,7 @@ header {
     top: 80px;
     left: 0;
     right: 0;
-    z-index: 102;
+    z-index: 110;
     animation: fade 0.5s ease-in-out;
     @media only screen and (max-width: 1024px) {
       display: none;

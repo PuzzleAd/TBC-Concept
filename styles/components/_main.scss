@@ -1,7 +1,7 @@
 .button-menu-section {
   .button-menu {
     position: fixed;
-    z-index: 95;
+    z-index: 105;
     right: 15px;
     bottom: 15px;
     display: flex;
@@ -90,6 +90,8 @@
   overflow-y: scroll;
   animation: fade 0.5s ease-in-out;
   flex: 1;
+  position: relative;
+  z-index: 101;
   &::-webkit-scrollbar {
     width: 0;
     transition: width 0.5s ease;
@@ -159,7 +161,6 @@
         height: 360px;
         position: relative;
         overflow: hidden;
-        z-index: -99;
         border-radius: 4px;
         @include responsive(small) {
           height: 450px;
@@ -185,7 +186,6 @@
           bottom: 20px;
           left: 15px;
           right: 15px;
-
           @include responsive(small) {
             gap: 20px;
             bottom: 36px;
@@ -347,7 +347,6 @@
             min-width: 280px;
             height: 232px;
             position: relative;
-            z-index: -99;
             overflow: hidden;
             border-radius: 8px;
             &:hover img {
@@ -486,6 +485,7 @@
       }
       .section-digital-bank-container {
         width: inherit;
+        position: relative;
         padding: 32px 15px;
         background-color: white;
         @include responsive(small) {
