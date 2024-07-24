@@ -869,8 +869,20 @@
             justify-content: space-between;
             gap: 0;
           }
+          &::-webkit-scrollbar {
+            height: 2px;
+          }
+
+          &::-webkit-scrollbar-track {
+            background: #aeaeae;
+          }
+
+          &::-webkit-scrollbar-thumb {
+            background: $blue-color;
+          }
+          scrollbar-width: thin;
+          scrollbar-color: $blue-color #aeaeae;
           .card-box {
-            cursor: pointer;
             min-width: 80%;
             height: auto;
             display: flex;

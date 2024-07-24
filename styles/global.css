@@ -1792,6 +1792,8 @@ header #menu-container .last-box .right-side a {
      -moz-user-select: none;
           user-select: none;
   padding-bottom: 20px;
+  scrollbar-width: thin;
+  scrollbar-color: #182cc0 #aeaeae;
 }
 @media (min-width: 479px) {
   #main-footer-container main .section-products .section-products-container .section-products-cards {
@@ -1815,8 +1817,16 @@ header #menu-container .last-box .right-side a {
     gap: 0;
   }
 }
+#main-footer-container main .section-products .section-products-container .section-products-cards::-webkit-scrollbar {
+  height: 2px;
+}
+#main-footer-container main .section-products .section-products-container .section-products-cards::-webkit-scrollbar-track {
+  background: #aeaeae;
+}
+#main-footer-container main .section-products .section-products-container .section-products-cards::-webkit-scrollbar-thumb {
+  background: #182cc0;
+}
 #main-footer-container main .section-products .section-products-container .section-products-cards .card-box {
-  cursor: pointer;
   min-width: 80%;
   height: auto;
   display: flex;
