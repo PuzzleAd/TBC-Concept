@@ -94,14 +94,16 @@
             width: 56px;
             height: 56px;
           }
-          &:hover {
-            background-color: $hover-color;
-            + .active-menu-box-text {
-              display: flex;
-            }
-            svg {
-              fill: white;
-              transition: 0.5s;
+          @include responsive(large) {
+            &:hover {
+              background-color: $hover-color;
+              + .active-menu-box-text {
+                display: flex;
+              }
+              svg {
+                fill: white;
+                transition: 0.5s;
+              }
             }
           }
           svg {
@@ -611,7 +613,6 @@
               position: relative;
               height: 50%;
               overflow: hidden;
-              user-select: none;
               @include responsive(large) {
                 height: 70%;
               }
@@ -813,6 +814,135 @@
             @include responsive(large) {
               width: 270px;
               height: 337px;
+            }
+          }
+        }
+      }
+    }
+    .section-products {
+      width: 100%;
+      padding: 36px 15px;
+      @include responsive(small) {
+        padding: 40px 45px;
+      }
+      @include responsive(large) {
+        display: flex;
+        justify-content: center;
+        padding: 60px 45px;
+      }
+      .section-products-container {
+        width: inherit;
+        max-width: 1110px;
+        .section-products-header {
+          font-family: "bold";
+          font-size: 14px;
+          color: $swiper-h-color;
+          margin-bottom: 20px;
+          @include responsive(small) {
+            font-size: 24px;
+            margin-bottom: 28px;
+          }
+          @include responsive(large) {
+            margin-bottom: 36px;
+          }
+        }
+        .section-products-cards {
+          width: inherit;
+          display: flex;
+          gap: 16px;
+          overflow-x: scroll;
+          scroll-behavior: smooth;
+          box-sizing: content-box;
+          user-select: none;
+          padding-bottom: 20px;
+          @include responsive(small) {
+            padding-bottom: 28px;
+          }
+          @include responsive(medium) {
+            padding-bottom: 38px;
+          }
+          @include responsive(large) {
+            gap: 25px;
+          }
+          @include responsive(largest) {
+            overflow: hidden;
+            justify-content: space-between;
+            gap: 0;
+          }
+          .card-box {
+            cursor: pointer;
+            min-width: 80%;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            border: 1px solid #e1e4e5;
+            border-radius: 6px;
+            background-color: transparent;
+            transition: box-shadow 0.4s ease-in-out,
+              background-color 0.4s ease-in-out;
+            &:hover {
+              background-color: white;
+              box-shadow: 0 36px 40px -15px rgba(12, 43, 67, 0.07);
+            }
+            @include responsive(small) {
+              min-width: 60%;
+            }
+            @include responsive(swiper-mid) {
+              min-width: 45%;
+            }
+            @include responsive(medium) {
+              min-width: 40%;
+              border-radius: 8px;
+            }
+            @include responsive(large) {
+              min-width: 35%;
+            }
+            @include responsive(largest) {
+              min-width: 20%;
+              width: 350px;
+              height: 408px;
+            }
+            img {
+              width: 100%;
+              height: 50%;
+              overflow: hidden;
+              border-top-left-radius: 6px;
+              border-top-right-radius: 6px;
+              @include responsive(small) {
+                height: 41%;
+              }
+              @include responsive(medium) {
+                height: 50%;
+              }
+            }
+          }
+          .card-text {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            padding: 20px;
+            @include responsive(medium) {
+              padding: 28px;
+            }
+            h1 {
+              font-family: "bold";
+              font-size: 14px;
+              color: $swiper-h-color;
+              @include responsive(medium) {
+                font-size: 16px;
+              }
+            }
+            p {
+              font-size: 12px;
+              color: $swiper-p-color;
+              @include responsive(medium) {
+                font-size: 14px;
+              }
+              span {
+                font-family: "bold";
+                color: $gray-color;
+              }
             }
           }
         }
