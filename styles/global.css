@@ -1339,6 +1339,7 @@ header #menu-container .last-box .right-side a {
 #main-footer-container main .section-offers .section-offers-container {
   width: inherit;
   max-width: 1110px;
+  position: relative;
 }
 #main-footer-container main .section-offers .section-offers-container .section-offers-header {
   width: inherit;
@@ -1372,14 +1373,22 @@ header #menu-container .last-box .right-side a {
   align-items: center;
   gap: 6px;
 }
+#main-footer-container main .section-offers .section-offers-container .section-offers-header .header-right-side:hover svg {
+  fill: #007aff;
+}
+#main-footer-container main .section-offers .section-offers-container .section-offers-header .header-right-side:hover p {
+  color: #007aff;
+}
 #main-footer-container main .section-offers .section-offers-container .section-offers-header .header-right-side svg {
   fill: #182cc0;
+  transition: fill 0.5s ease-in-out;
 }
 #main-footer-container main .section-offers .section-offers-container .section-offers-header .header-right-side p {
   font-family: "bold";
   font-size: 12px;
   color: #182cc0;
   margin-top: 2px;
+  transition: color 0.5s ease-in-out;
 }
 @media (min-width: 479px) {
   #main-footer-container main .section-offers .section-offers-container .section-offers-header .header-right-side p {
@@ -1387,11 +1396,21 @@ header #menu-container .last-box .right-side a {
   }
 }
 #main-footer-container main .section-offers .section-offers-container .section-offers-slider {
+  cursor: grab;
+  position: relative;
   width: inherit;
   display: flex;
   gap: 16px;
-  overflow-x: scroll;
+  overflow-x: auto;
+  scroll-behavior: smooth;
   box-sizing: content-box;
+  padding-bottom: 28px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+#main-footer-container main .section-offers .section-offers-container .section-offers-slider::-webkit-scrollbar {
+  display: none;
 }
 #main-footer-container main .section-offers .section-offers-container .section-offers-slider .section-offers-card {
   min-width: 80%;
@@ -1402,6 +1421,11 @@ header #menu-container .last-box .right-side a {
   border: 1px solid #e1e4e5;
   border-radius: 6px;
   background-color: transparent;
+  transition: box-shadow 0.4s ease-in-out, background-color 0.4s ease-in-out;
+}
+#main-footer-container main .section-offers .section-offers-container .section-offers-slider .section-offers-card:hover {
+  background-color: white;
+  box-shadow: 0 36px 40px -15px rgba(12, 43, 67, 0.07);
 }
 @media (min-width: 479px) {
   #main-footer-container main .section-offers .section-offers-container .section-offers-slider .section-offers-card {
@@ -1427,6 +1451,9 @@ header #menu-container .last-box .right-side a {
   position: relative;
   height: 50%;
   overflow: hidden;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 @media (min-width: 1024px) {
   #main-footer-container main .section-offers .section-offers-container .section-offers-slider .section-offers-card .card-image-box {
@@ -1443,6 +1470,9 @@ header #menu-container .last-box .right-side a {
   height: 100%;
   border-top-left-radius: 6px;
   border-top-right-radius: 6px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 @media (min-width: 767px) {
   #main-footer-container main .section-offers .section-offers-container .section-offers-slider .section-offers-card .card-image-box .big-image {
@@ -1494,6 +1524,22 @@ header #menu-container .last-box .right-side a {
 #main-footer-container main .section-offers .section-offers-container .section-offers-slider .section-offers-card .card-text-box .p-text-box {
   display: flex;
   gap: 10px;
+}
+#main-footer-container main .section-offers .section-offers-container .section-offers-scroll-box {
+  width: 100%;
+  height: 2px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #555f62;
+  border-radius: 1px;
+  pointer-events: none;
+}
+#main-footer-container main .section-offers .section-offers-container .section-offers-scroll-box .scroll-thumb {
+  height: 100%;
+  background: #182cc0;
+  transition: width 0.1s ease;
 }
 #main-footer-container main .section-digital-bank {
   width: 100%;

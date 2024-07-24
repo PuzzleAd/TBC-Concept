@@ -134,7 +134,7 @@ buttonMenu.addEventListener("click", () => {
   buttonMenu.classList.toggle("active");
 });
 
-// scroll styling
+// scroll styling and swiper logic
 
 const footerContainer = document.getElementById("main-footer-container");
 let scrollTimeout;
@@ -146,4 +146,49 @@ footerContainer.addEventListener("scroll", () => {
   scrollTimeout = setTimeout(() => {
     footerContainer.classList.remove("show-scrollbar");
   }, 1000);
+});
+
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const slider = document.querySelector(".section-offers-slider");
+  const thumb = document.querySelector(".section-offers-scroll-box");
+
+  const updateScrollThumb = () => {
+    const maxScrollLeft = slider.scrollWidth - slider.clientWidth;
+    const scrollLeft = slider.scrollLeft;
+    const scrollThumbWidth = (slider.clientWidth / slider.scrollWidth) * 100;
+    const scrollWidthPercentage = (scrollLeft / maxScrollLeft) * 100;
+    thumb.style.width = `${scrollThumbWidth}%`;
+    thumb.style.transform = `translateX(${scrollWidthPercentage}%)`;
+  };
+
+  let isDragging = false;
+  let startX;
+  let scrollLeft;
+
+  slider.addEventListener("mousedown", (event) => {
+    isDragging = true;
+    startX = event.pageX - slider.offsetLeft;
+    scrollLeft = slider.scrollLeft;
+    slider.style.cursor = "grabbing";
+  });
+
+  document.addEventListener("mouseup", () => {
+    isDragging = false;
+    slider.style.cursor = "grab";
+  });
+
+  document.addEventListener("mousemove", (event) => {
+    if (!isDragging) return;
+    event.preventDefault();
+    const x = event.pageX - slider.offsetLeft;
+    const walk = (x - startX) * 1.5; // Adjust the scroll speed if needed
+    slider.scrollLeft = scrollLeft - walk;
+  });
+
+  slider.addEventListener("scroll", updateScrollThumb);
+  window.addEventListener("resize", updateScrollThumb);
+  updateScrollThumb(); // Initialize on page load
 });
