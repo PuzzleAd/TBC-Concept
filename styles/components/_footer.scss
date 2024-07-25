@@ -10,13 +10,13 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      background-color: white;
+      background-color: $white-color;
       .footer-top {
         width: inherit;
         max-width: 1110px;
         @include container(flex, space-between, center);
         padding: 32px 15px;
-        border-bottom: 1px solid #d1d5d6;
+        border-bottom: 1px solid $nav-border;
         @include responsive(small) {
           padding: 32px 45px;
         }
@@ -43,7 +43,7 @@
           position: relative;
           z-index: 105;
           &:hover .geo-box {
-            background-color: gainsboro;
+            background-color: $language-background;
             transition: background-color 0.5s ease-in;
           }
           .geo-box {
@@ -71,8 +71,8 @@
             padding: 12px 18px;
             border: 1px solid #e1e4e5;
             border-radius: 4px;
-            box-shadow: 0 4px 6px 2px rgba(12, 43, 67, 0.05);
-            background-color: white;
+            box-shadow: 0 4px 6px 2px $language-box-shadow;
+            background-color: $white-color;
             &:hover {
               background-color: $bd-bg;
               transition: background-color 0.25s ease-in-out;
@@ -96,7 +96,7 @@
         }
         .nav-item {
           padding: 24px 15px 4px;
-          border-bottom: 1px solid #d1d5d6;
+          border-bottom: 1px solid $nav-border;
           @include responsive(small) {
             padding: 36px 45px 16px;
           }
@@ -133,7 +133,7 @@
             @include responsive(small) {
               gap: 24px;
             }
-            p {
+            a {
               font-size: 14px;
               color: $gray-color;
               @include responsive(small) {
@@ -145,7 +145,7 @@
         .contact-container {
           width: 100%;
           padding: 32px 15px;
-          border-bottom: 1px solid #eef1f1;
+          border-bottom: 1px solid $border-color;
           @include responsive(small) {
             padding: 56px 45px;
           }
@@ -170,9 +170,17 @@
               display: flex;
               align-items: center;
               gap: 10px;
-              font-family: "medium";
-              font-size: 14px;
-              color: $gray-color;
+              a {
+                font-family: "medium";
+                font-size: 14px;
+                color: $gray-color;
+                &:hover {
+                  text-decoration: underline;
+                }
+                @include responsive(largest) {
+                  font-size: 16px;
+                }
+              }
             }
           }
           .social-container {
@@ -197,7 +205,7 @@
                   fill: $gray-color;
                 }
                 &:hover {
-                  background-color: #e1e4e5;
+                  background-color: $social-box-background;
                   transition: 0.5s;
                   svg {
                     fill: $blue-color;
@@ -263,11 +271,16 @@
               display: flex;
               align-items: center;
               gap: 10px;
-              font-family: "medium";
-              font-size: 14px;
-              color: $gray-color;
-              @include responsive(largest) {
-                font-size: 16px;
+              a {
+                font-family: "medium";
+                font-size: 14px;
+                color: $gray-color;
+                &:hover {
+                  text-decoration: underline;
+                }
+                @include responsive(largest) {
+                  font-size: 16px;
+                }
               }
             }
           }
@@ -293,7 +306,7 @@
                   fill: $gray-color;
                 }
                 &:hover {
-                  background-color: #e1e4e5;
+                  background-color: $social-box-background;
                   transition: 0.5s;
                   svg {
                     fill: $blue-color;
@@ -352,6 +365,10 @@
             a {
               color: $gray-color;
               font-size: 12px;
+              &:hover {
+                color: $blue-color;
+                transition: 0.25s ease-in-out;
+              }
               @include responsive(small) {
                 font-size: 14px;
               }

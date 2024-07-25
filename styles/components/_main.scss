@@ -24,17 +24,17 @@
       height: 48px;
       @include container(flex, center, center);
       border-radius: 50%;
-      background-color: #424a4d;
+      background-color: $trigger-box-background;
       transition: background-color 0.25s ease-in-out;
       @include responsive(small) {
         width: 56px;
         height: 56px;
       }
       &:hover {
-        background-color: rgba(66, 74, 77, 0.8);
+        background-color: $trigger-box-background-hover;
       }
       svg {
-        fill: white;
+        fill: $white-color;
         animation: fade 0.5s ease-in;
       }
       .open-svg {
@@ -76,8 +76,8 @@
           padding: 8px 12px;
           border-radius: 4px;
           font-size: 14px;
-          background-color: #424a4d;
-          color: white;
+          background-color: $trigger-box-background;
+          color: $white-color;
           & + .active-menu-hover-box:hover {
             display: flex;
           }
@@ -86,7 +86,7 @@
           cursor: pointer;
           width: 48px;
           height: 48px;
-          background-color: white;
+          background-color: $white-color;
           border-radius: 50%;
           transition: background-color 0.5s ease-in-out;
           @include container(flex, center, center);
@@ -101,7 +101,7 @@
                 display: flex;
               }
               svg {
-                fill: white;
+                fill: $white-color;
                 transition: 0.5s;
               }
             }
@@ -132,11 +132,11 @@
       width: 8px;
     }
     &::-webkit-scrollbar-track {
-      background: rgba(222, 222, 222, 0.75);
+      background: $scrollbar-background;
       border-radius: 4px;
     }
     &::-webkit-scrollbar-thumb {
-      background: rgba(0, 0, 0, 0.5);
+      background: $scrollbar-thumb-background;
       border-radius: 2px;
     }
     &::-webkit-scrollbar-button {
@@ -147,7 +147,7 @@
     display: block !important;
   }
   main {
-    .breadcrumbs-container {
+    .section-breadcrumbs-container {
       width: 100%;
       padding: 16px 15px;
       @include responsive(small) {
@@ -233,7 +233,7 @@
           }
           h1 {
             font-family: "bold";
-            color: white;
+            color: $white-color;
             @include responsive(small) {
               font-size: 24px;
             }
@@ -243,7 +243,7 @@
           }
           p {
             font-size: 14px;
-            color: white;
+            color: $white-color;
             @include responsive(medium) {
               max-width: 450px;
             }
@@ -271,7 +271,7 @@
               fill: white;
             }
             &:hover {
-              background: #3295ce;
+              background: $button-hover-color;
               transition: 0.5s;
             }
           }
@@ -405,7 +405,7 @@
               h1 {
                 font-family: "bold";
                 font-size: 16px;
-                color: white;
+                color: $white-color;
                 @include responsive(medium) {
                   font-size: 24px;
                 }
@@ -418,22 +418,22 @@
 
                 &:hover {
                   svg {
-                    fill: #aeaeae;
+                    fill: $aeaeae;
                     transition: 0.5s ease-in-out;
                   }
                   a {
-                    color: #aeaeae;
+                    color: $aeaeae;
                     text-decoration: none;
                     transition: 0.25s ease-in-out;
                   }
                 }
                 svg {
-                  fill: white;
+                  fill: $white-color;
                 }
                 a {
                   font-family: "bold";
                   font-size: 12px;
-                  color: white;
+                  color: $white-color;
                   text-decoration: underline;
                   margin-top: 2px;
                   @include responsive(small) {
@@ -478,7 +478,7 @@
           flex-direction: column;
           gap: 16px;
           padding: 24px;
-          background-color: white;
+          background-color: $white-color;
           border-radius: 8px;
           @include responsive(small) {
             padding: 40px 48px;
@@ -582,20 +582,22 @@
           &::-webkit-scrollbar {
             display: none;
           }
+          scrollbar-width: none;
+          scrollbar-color: transparent transparent;
           .section-offers-card {
             min-width: 80%;
             height: auto;
             display: flex;
             flex-direction: column;
             overflow: hidden;
-            border: 1px solid #e1e4e5;
+            border: 1px solid $social-box-background;
             border-radius: 6px;
             background-color: transparent;
             transition: box-shadow 0.4s ease-in-out,
               background-color 0.4s ease-in-out;
             &:hover {
-              background-color: white;
-              box-shadow: 0 36px 40px -15px rgba(12, 43, 67, 0.07);
+              background-color: $white-color;
+              box-shadow: 0 36px 40px -15px $box-shadow-color;
             }
             @include responsive(small) {
               min-width: 45%;
@@ -684,7 +686,7 @@
           pointer-events: none;
           .scroll-thumb {
             height: 100%;
-            background: #182cc0;
+            background: $blue-color;
             transition: width 0.1s ease;
           }
         }
@@ -859,6 +861,10 @@
           &::-webkit-scrollbar {
             display: none;
           }
+          scrollbar-width: none;
+          scrollbar-color: transparent transparent;
+          scrollbar-width: none;
+          scrollbar-color: transparent transparent;
           @include responsive(small) {
             padding-bottom: 28px;
           }
@@ -879,13 +885,13 @@
             display: flex;
             flex-direction: column;
             overflow: hidden;
-            border: 1px solid #e1e4e5;
+            border: 1px solid $social-box-background;
             border-radius: 6px;
             background-color: transparent;
             transition: box-shadow 0.4s ease-in-out,
               background-color 0.4s ease-in-out;
             &:hover {
-              background-color: white;
+              background-color: $white-color;
               box-shadow: 0 36px 40px -15px rgba(12, 43, 67, 0.07);
             }
             @include responsive(small) {
@@ -959,12 +965,12 @@
           background-color: $gray-color;
           border-radius: 1px;
           pointer-events: none;
-          @include responsive (largest) {
+          @include responsive(largest) {
             display: none;
           }
           .scroll-thumb {
             height: 100%;
-            background: #182cc0;
+            background: $blue-color;
             transition: width 0.1s ease;
           }
         }
@@ -1025,7 +1031,7 @@
             flex-direction: column;
             gap: 16px;
             padding: 28px;
-            background-color: white;
+            background-color: $white-color;
             @include responsive(swiper-mid) {
               min-width: 45%;
             }
@@ -1037,7 +1043,7 @@
             @include responsive(large) {
               min-width: 35%;
             }
-            @include responsive (largest) {
+            @include responsive(largest) {
               min-width: 32%;
             }
             .global-finance-image {
@@ -1056,14 +1062,14 @@
               font-family: "bold";
               font-size: 14px;
               color: $swiper-h-color;
-              @include responsive (medium) {
+              @include responsive(medium) {
                 font-size: 16px;
               }
             }
             p {
               font-size: 14px;
               color: $swiper-p-color;
-              @include responsive (medium) {
+              @include responsive(medium) {
                 font-size: 14px;
               }
             }
@@ -1081,7 +1087,7 @@
           pointer-events: none;
           .scroll-thumb {
             height: 100%;
-            background: #182cc0;
+            background: $blue-color;
             transition: width 0.1s ease;
           }
         }

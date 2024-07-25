@@ -170,7 +170,7 @@ const swiperLogic = (sliderPar, scrollPar) => {
       slider.style.cursor = "grab";
     });
 
-    //calculates mouse position while isDragging is true and mouse is moved
+    //calculates mouse position while mouse is moved
     document.addEventListener("mousemove", (event) => {
       if (!isDragging) return;
       event.preventDefault();
