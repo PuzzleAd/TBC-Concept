@@ -833,6 +833,7 @@
       .section-products-container {
         width: inherit;
         max-width: 1110px;
+        position: relative;
         .section-products-header {
           font-family: "bold";
           font-size: 14px;
@@ -855,6 +856,9 @@
           box-sizing: content-box;
           user-select: none;
           padding-bottom: 20px;
+          &::-webkit-scrollbar {
+            display: none;
+          }
           @include responsive(small) {
             padding-bottom: 28px;
           }
@@ -869,19 +873,6 @@
             justify-content: space-between;
             gap: 0;
           }
-          &::-webkit-scrollbar {
-            height: 2px;
-          }
-
-          &::-webkit-scrollbar-track {
-            background: #aeaeae;
-          }
-
-          &::-webkit-scrollbar-thumb {
-            background: $blue-color;
-          }
-          scrollbar-width: thin;
-          scrollbar-color: $blue-color #aeaeae;
           .card-box {
             min-width: 80%;
             height: auto;
@@ -956,6 +947,25 @@
                 color: $gray-color;
               }
             }
+          }
+        }
+        .section-products-scroll-box {
+          width: 100%;
+          height: 2px;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          background-color: $gray-color;
+          border-radius: 1px;
+          pointer-events: none;
+          @include responsive (largest) {
+            display: none;
+          }
+          .scroll-thumb {
+            height: 100%;
+            background: #182cc0;
+            transition: width 0.1s ease;
           }
         }
       }

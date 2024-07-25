@@ -148,83 +148,68 @@ footerContainer.addEventListener("scroll", () => {
   }, 1000);
 });
 
-// section-offers swiper my own logic with using overflow-scroll and using extra div for scroll which is updating while slider is scrolled
+//my own logic with using overflow-scroll and using extra div for scroll-box which is updating while slider is scrolled
 
-document.addEventListener("DOMContentLoaded", () => {
-  const slider = document.querySelector(".section-offers-slider");
-  const thumb = document.querySelector(".section-offers-scroll-box");
-  let isDragging = false;
-  let startX;
-  let scrollLeft;
+const swiperLogic = (sliderPar, scrollPar) => {
+  document.addEventListener("DOMContentLoaded", () => {
+    const slider = document.querySelector(sliderPar);
+    const thumb = document.querySelector(scrollPar);
+    let isDragging = false;
+    let startX;
+    let scrollLeft;
 
-  slider.addEventListener("mousedown", (event) => {
-    isDragging = true;
-    startX = event.pageX - slider.offsetLeft;
-    scrollLeft = slider.scrollLeft;
-    slider.style.cursor = "grabbing";
+    slider.addEventListener("mousedown", (event) => {
+      isDragging = true;
+      startX = event.pageX - slider.offsetLeft;
+      scrollLeft = slider.scrollLeft;
+      slider.style.cursor = "grabbing";
+    });
+
+    document.addEventListener("mouseup", () => {
+      isDragging = false;
+      slider.style.cursor = "grab";
+    });
+
+    //calculates mouse position while isDragging is true and mouse is moved
+    document.addEventListener("mousemove", (event) => {
+      if (!isDragging) return;
+      event.preventDefault();
+      const x = event.pageX - slider.offsetLeft;
+      const walk = (x - startX) * 1.5;
+      slider.scrollLeft = scrollLeft - walk;
+    });
+
+    //calculates scroll position
+    const updateScrollThumb = () => {
+      const maxScrollLeft = slider.scrollWidth - slider.clientWidth;
+      const scrollLeft = slider.scrollLeft;
+      const scrollThumbWidth = (slider.clientWidth / slider.scrollWidth) * 100;
+      const scrollWidthPercentage = (scrollLeft / maxScrollLeft) * 100;
+      thumb.style.width = `${scrollThumbWidth}%`;
+      thumb.style.transform = `translateX(${scrollWidthPercentage}%)`;
+
+      const thumbBoundingBox = thumb.getBoundingClientRect();
+      const sliderBoundingBox = slider.getBoundingClientRect();
+
+      //managing scroll thumb not to go beyond scroll boundaries
+
+      if (thumbBoundingBox.right > sliderBoundingBox.right) {
+        thumb.style.transform = `translateX(${100 - scrollThumbWidth}%)`;
+      } else if (thumbBoundingBox.left < sliderBoundingBox.left) {
+        thumb.style.transform = `translateX(0%)`;
+      }
+    };
+
+    slider.addEventListener("scroll", updateScrollThumb);
+    window.addEventListener("resize", updateScrollThumb);
+    updateScrollThumb();
   });
+};
 
-  document.addEventListener("mouseup", () => {
-    isDragging = false;
-    slider.style.cursor = "grab";
-  });
+// section-offers swiper
 
-  //calculates mouse position while isDragging is true and mouse is moved
-  document.addEventListener("mousemove", (event) => {
-    if (!isDragging) return;
-    event.preventDefault();
-    const x = event.pageX - slider.offsetLeft;
-    const walk = (x - startX) * 1.5;
-    slider.scrollLeft = scrollLeft - walk;
-  });
+swiperLogic(".section-offers-slider", ".section-offers-scroll-box");
 
-  //calculates scroll position
-  const updateScrollThumb = () => {
-    const maxScrollLeft = slider.scrollWidth - slider.clientWidth;
-    const scrollLeft = slider.scrollLeft;
-    const scrollThumbWidth = (slider.clientWidth / slider.scrollWidth) * 100;
-    const scrollWidthPercentage = (scrollLeft / maxScrollLeft) * 100;
-    thumb.style.width = `${scrollThumbWidth}%`;
-    thumb.style.transform = `translateX(${scrollWidthPercentage}%)`;
-  };
+// section-products swiper
 
-  slider.addEventListener("scroll", updateScrollThumb);
-  window.addEventListener("resize", updateScrollThumb);
-  updateScrollThumb();
-});
-
-// section-products swiper with my own logic usin overflow-x-scroll and styling it with webkits
-
-document.addEventListener("DOMContentLoaded", () => {
-  const slider = document.querySelector(".section-products-cards");
-  let isDragged = false;
-  let startX;
-  let scrollLeft;
-
-  slider.addEventListener("mousedown", (e) => {
-    isDragged = true;
-    slider.classList.add("active");
-    startX = e.pageX - slider.offsetLeft;
-    scrollLeft = slider.scrollLeft;
-    slider.style.cursor = "grabbing";
-  });
-
-  slider.addEventListener("mouseleave", () => {
-    isDragged = false;
-    slider.classList.remove("active");
-  });
-
-  slider.addEventListener("mouseup", () => {
-    isDragged = false;
-    slider.classList.remove("active");
-    slider.style.cursor = "grab";
-  });
-
-  slider.addEventListener("mousemove", (e) => {
-    if (!isDragged) return;
-    e.preventDefault();
-    const x = e.pageX - slider.offsetLeft;
-    const walk = (x - startX) * 2;
-    slider.scrollLeft = scrollLeft - walk;
-  });
-});
+swiperLogic(".section-products-cards", ".section-products-scroll-box");
