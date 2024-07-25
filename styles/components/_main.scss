@@ -970,5 +970,122 @@
         }
       }
     }
+    .section-prizes {
+      width: 100%;
+      padding: 36px 15px;
+      @include responsive(small) {
+        padding: 40px 45px;
+      }
+      @include responsive(large) {
+        display: flex;
+        justify-content: center;
+        padding: 60px 45px;
+      }
+      .section-prizes-container {
+        width: inherit;
+        max-width: 1110px;
+        position: relative;
+        .section-prizes-header {
+          font-family: "bold";
+          font-size: 14px;
+          color: $swiper-h-color;
+          margin-bottom: 20px;
+          @include responsive(small) {
+            font-size: 24px;
+            margin-bottom: 28px;
+          }
+          @include responsive(large) {
+            margin-bottom: 36px;
+          }
+        }
+        .section-prizes-cards {
+          width: inherit;
+          display: flex;
+          gap: 16px;
+          overflow-x: scroll;
+          scroll-behavior: smooth;
+          box-sizing: content-box;
+          user-select: none;
+          padding-bottom: 20px;
+          &::-webkit-scrollbar {
+            display: none;
+          }
+          @include responsive(small) {
+            padding-bottom: 28px;
+          }
+          @include responsive(medium) {
+            padding-bottom: 38px;
+          }
+          @include responsive(large) {
+            gap: 25px;
+          }
+          .card-box {
+            min-width: 80%;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            padding: 28px;
+            background-color: white;
+            @include responsive(swiper-mid) {
+              min-width: 45%;
+            }
+            @include responsive(medium) {
+              min-width: 40%;
+              gap: 24px;
+              border-radius: 8px;
+            }
+            @include responsive(large) {
+              min-width: 35%;
+            }
+            @include responsive (largest) {
+              min-width: 32%;
+            }
+            .global-finance-image {
+              width: 118px;
+              height: 52px;
+            }
+            .euro-money-image {
+              width: 93.6px;
+              height: 52px;
+            }
+            .the-banker-image {
+              width: 52px;
+              height: 52px;
+            }
+            h1 {
+              font-family: "bold";
+              font-size: 14px;
+              color: $swiper-h-color;
+              @include responsive (medium) {
+                font-size: 16px;
+              }
+            }
+            p {
+              font-size: 14px;
+              color: $swiper-p-color;
+              @include responsive (medium) {
+                font-size: 14px;
+              }
+            }
+          }
+        }
+        .section-prizes-scroll-box {
+          width: 100%;
+          height: 2px;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          background-color: $gray-color;
+          border-radius: 1px;
+          pointer-events: none;
+          .scroll-thumb {
+            height: 100%;
+            background: #182cc0;
+            transition: width 0.1s ease;
+          }
+        }
+      }
+    }
   }
 }

@@ -1934,6 +1934,151 @@ header #menu-container .last-box .right-side a {
   background: #182cc0;
   transition: width 0.1s ease;
 }
+#main-footer-container main .section-prizes {
+  width: 100%;
+  padding: 36px 15px;
+}
+@media (min-width: 479px) {
+  #main-footer-container main .section-prizes {
+    padding: 40px 45px;
+  }
+}
+@media (min-width: 1024px) {
+  #main-footer-container main .section-prizes {
+    display: flex;
+    justify-content: center;
+    padding: 60px 45px;
+  }
+}
+#main-footer-container main .section-prizes .section-prizes-container {
+  width: inherit;
+  max-width: 1110px;
+  position: relative;
+}
+#main-footer-container main .section-prizes .section-prizes-container .section-prizes-header {
+  font-family: "bold";
+  font-size: 14px;
+  color: #141719;
+  margin-bottom: 20px;
+}
+@media (min-width: 479px) {
+  #main-footer-container main .section-prizes .section-prizes-container .section-prizes-header {
+    font-size: 24px;
+    margin-bottom: 28px;
+  }
+}
+@media (min-width: 1024px) {
+  #main-footer-container main .section-prizes .section-prizes-container .section-prizes-header {
+    margin-bottom: 36px;
+  }
+}
+#main-footer-container main .section-prizes .section-prizes-container .section-prizes-cards {
+  width: inherit;
+  display: flex;
+  gap: 16px;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+  box-sizing: content-box;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  padding-bottom: 20px;
+}
+#main-footer-container main .section-prizes .section-prizes-container .section-prizes-cards::-webkit-scrollbar {
+  display: none;
+}
+@media (min-width: 479px) {
+  #main-footer-container main .section-prizes .section-prizes-container .section-prizes-cards {
+    padding-bottom: 28px;
+  }
+}
+@media (min-width: 767px) {
+  #main-footer-container main .section-prizes .section-prizes-container .section-prizes-cards {
+    padding-bottom: 38px;
+  }
+}
+@media (min-width: 1024px) {
+  #main-footer-container main .section-prizes .section-prizes-container .section-prizes-cards {
+    gap: 25px;
+  }
+}
+#main-footer-container main .section-prizes .section-prizes-container .section-prizes-cards .card-box {
+  min-width: 80%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 28px;
+  background-color: white;
+}
+@media (min-width: 600px) {
+  #main-footer-container main .section-prizes .section-prizes-container .section-prizes-cards .card-box {
+    min-width: 45%;
+  }
+}
+@media (min-width: 767px) {
+  #main-footer-container main .section-prizes .section-prizes-container .section-prizes-cards .card-box {
+    min-width: 40%;
+    gap: 24px;
+    border-radius: 8px;
+  }
+}
+@media (min-width: 1024px) {
+  #main-footer-container main .section-prizes .section-prizes-container .section-prizes-cards .card-box {
+    min-width: 35%;
+  }
+}
+@media (min-width: 1440px) {
+  #main-footer-container main .section-prizes .section-prizes-container .section-prizes-cards .card-box {
+    min-width: 32%;
+  }
+}
+#main-footer-container main .section-prizes .section-prizes-container .section-prizes-cards .card-box .global-finance-image {
+  width: 118px;
+  height: 52px;
+}
+#main-footer-container main .section-prizes .section-prizes-container .section-prizes-cards .card-box .euro-money-image {
+  width: 93.6px;
+  height: 52px;
+}
+#main-footer-container main .section-prizes .section-prizes-container .section-prizes-cards .card-box .the-banker-image {
+  width: 52px;
+  height: 52px;
+}
+#main-footer-container main .section-prizes .section-prizes-container .section-prizes-cards .card-box h1 {
+  font-family: "bold";
+  font-size: 14px;
+  color: #141719;
+}
+@media (min-width: 767px) {
+  #main-footer-container main .section-prizes .section-prizes-container .section-prizes-cards .card-box h1 {
+    font-size: 16px;
+  }
+}
+#main-footer-container main .section-prizes .section-prizes-container .section-prizes-cards .card-box p {
+  font-size: 14px;
+  color: #6f787b;
+}
+@media (min-width: 767px) {
+  #main-footer-container main .section-prizes .section-prizes-container .section-prizes-cards .card-box p {
+    font-size: 14px;
+  }
+}
+#main-footer-container main .section-prizes .section-prizes-container .section-prizes-scroll-box {
+  width: 100%;
+  height: 2px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #555f62;
+  border-radius: 1px;
+  pointer-events: none;
+}
+#main-footer-container main .section-prizes .section-prizes-container .section-prizes-scroll-box .scroll-thumb {
+  height: 100%;
+  background: #182cc0;
+  transition: width 0.1s ease;
+}
 
 #main-footer-container footer {
   width: 100%;

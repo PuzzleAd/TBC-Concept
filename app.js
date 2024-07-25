@@ -213,3 +213,7 @@ swiperLogic(".section-offers-slider", ".section-offers-scroll-box");
 // section-products swiper
 
 swiperLogic(".section-products-cards", ".section-products-scroll-box");
+
+// section-prizes swiper
+
+swiperLogic(".section-prizes-cards", ".section-prizes-scroll-box");
