@@ -10,32 +10,39 @@
 
 პროექტის სტრუქტურა და თითოეული ფოლდერისა და ფაილისა დანიშნულება:
 
+```bash
 project-root/
 ├── index.html # მთავარი HTML ფაილი
 ├── app.js # მთავარი JavaScript ფაილი
-├── assets/ # დამხმარე მასალა
+├── assets/ 
 │ ├── fonts/ # ფონტის ფაილები
 │ └── images/ # სურათები გვერდისთვის
 ├── styles/ # CSS და SCSS ფაილები
-│ ├── components/ # გვერდის კომპონენტების სტილები
+│ ├── components/
 │ │ ├── footer.scss # Footer-ის სტილები
 │ │ ├── header.scss # Header-ის სტილები
 │ │ └── main.scss # Main-ის სტილები
-│ ├── utils/ # დამხმარე ხელსაწყოები გასტილვაში
+│ ├── utils/ 
 │ │ ├── fonts.scss # ფონტების განსაზღვრებები
 │ │ ├── mixins.scss # SCSS-ის ფუნქციები
 │ │ ├── reset.scss # ზოგადი ტეგების გასტილვა
 │ │ └── variables.scss # ცვლადების განსაზღვრებები
-│ ├── global.css # SCSS გადმოტარგმნილი CSS-ში
+│ ├── global.css # SCSS გადმოთარგმნილი CSS-ში
 │ ├── global.css.map #
 │ └── global.scss # დაიმპორტებული SCSS სტილები
 └── README.md # პროექტის აღწერა
+```
 
 ### Technologies Used
 
 - **HTML5** გვერდის სტრუქტურის ასაწყობად
 - **CSS3/SCSS**: გვერდის გასასტილად
 - **JavaScript (ES6+)**: ელემენტებისთვის ფუნქციონალის მისანიჭებლად
+
+### Installation
+
+1. **Clone the repository**
+2. **Navigate to the project directory**
 
 ### Usage
 
