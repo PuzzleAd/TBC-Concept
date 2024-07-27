@@ -18,18 +18,19 @@ project-root/
 │ └── images/ # სურათები გვერდისთვის
 ├── styles/ # CSS და SCSS ფაილები
 │ ├── components/ # გვერდის კომპონენტების სტილები
-│ │ ├── _footer.scss # Footer-ის სტილები
-│ │ ├── _header.scss # Header-ის სტილები
-│ │ └── _main.scss # Main-ის სტილები
+│ │ ├── footer.scss # Footer-ის სტილები
+│ │ ├── header.scss # Header-ის სტილები
+│ │ └── main.scss # Main-ის სტილები
 │ ├── utils/ # დამხმარე ხელსაწყოები გასტილვაში
-│ │ ├── _fonts.scss # ფონტების განსაზღვრებები
-│ │ ├── _mixins.scss # SCSS-ის ფუნქციები
-│ │ ├── _reset.scss # ზოგადი ტეგების გასტილვა
-│ │ └── _variables.scss # ცვლადების განსაზღვრებები
+│ │ ├── fonts.scss # ფონტების განსაზღვრებები
+│ │ ├── mixins.scss # SCSS-ის ფუნქციები
+│ │ ├── reset.scss # ზოგადი ტეგების გასტილვა
+│ │ └── variables.scss # ცვლადების განსაზღვრებები
 │ ├── global.css # SCSS გადმოტარგმნილი CSS-ში
 │ ├── global.css.map #
 │ └── global.scss # დაიმპორტებული SCSS სტილები
 └── README.md # პროექტის აღწერა
+
 ### Technologies Used
 
 - **HTML5** გვერდის სტრუქტურის ასაწყობად
