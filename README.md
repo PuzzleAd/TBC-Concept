@@ -46,4 +46,4 @@ project-root/
 
 ### Usage
 
-გახსენით index.html თქვენს ბრაუზერში
+1. **გახსენით index.html თქვენს ბრაუზერში**
