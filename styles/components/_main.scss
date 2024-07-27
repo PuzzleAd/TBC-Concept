@@ -863,8 +863,6 @@
           }
           scrollbar-width: none;
           scrollbar-color: transparent transparent;
-          scrollbar-width: none;
-          scrollbar-color: transparent transparent;
           @include responsive(small) {
             padding-bottom: 28px;
           }
@@ -1016,6 +1014,8 @@
           &::-webkit-scrollbar {
             display: none;
           }
+          scrollbar-width: none;
+          scrollbar-color: transparent transparent;
           @include responsive(small) {
             padding-bottom: 28px;
           }
